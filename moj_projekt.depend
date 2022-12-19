@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1671054318 source:c:\users\user\desktop\programy_c\program_zawieraj¹cy_wszystko_co_zrobilem\moj_projekt\lib_funkcje.c
+	<stdio.h>
+	<math.h>
+	<stdbool.h>
+	<limits.h>
+	<string.h>
+	<ctype.h>
+
+1671054290 source:c:\users\user\desktop\programy_c\program_zawieraj¹cy_wszystko_co_zrobilem\moj_projekt\main.c
+	<stdio.h>
+	"lib_funkcje.h"
+
+1670938632 c:\users\user\desktop\programy_c\program_zawieraj¹cy_wszystko_co_zrobilem\moj_projekt\lib_funkcje.h
+
+1671402887 source:c:\users\adama\desktop\studia\zadania c\aplikacja konsolowa\lib_funkcje.c
+	<stdio.h>
+	<math.h>
+	<stdbool.h>
+	<limits.h>
+	<string.h>
+	<ctype.h>
+
+1671402012 source:c:\users\adama\desktop\studia\zadania c\aplikacja konsolowa\main.c
+	<stdio.h>
+	"lib_funkcje.h"
+
+1671215806 c:\users\adama\desktop\studia\zadania c\aplikacja konsolowa\lib_funkcje.h
+
