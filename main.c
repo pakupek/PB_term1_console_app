@@ -787,6 +787,7 @@ void f18()
     return;
 }
 
+//ostanie zadanie z funkcji do zrobienia!
 void f19()
 {
     char wybor;
@@ -797,6 +798,7 @@ void f19()
         scanf("%c",&wybor);
         if(wybor == 'Y' || wybor == 'y')
         {
+            printf("void czy_ciag( char *ciag_1, char *ciag_2)\n{\n  int n=strlen(ciag_1),m=strlen(ciag_2),i,j;\n  char wynik[i][j];");
             break;
         }
         else if(wybor == 'N' || wybor == 'n')

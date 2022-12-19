@@ -5,11 +5,6 @@
 #include <string.h>
 #include <ctype.h>
 
-int add(int x, int y)
-{
-    return x + y;
-}
-
 int pole(int b1, int b2, int b3)
 {
     int wynik,obw,p;
