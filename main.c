@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lib_funkcje.h"
+#include "lib_pliki_tekstowe.h"
 
 
 void f1()
