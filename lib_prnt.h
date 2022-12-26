@@ -1,3 +1,5 @@
+void prnt_header();
+void prnt_func_header();
 void pf1();
 void pf2();
 void pf3();

@@ -9,6 +9,7 @@ void f1()
     int b1,b2,b3;
     char wybor;
     getchar();
+    printf("Zadanie 1. Napisz funkcje, ktora zwroci pole trojkata. Dlugosci bokow trojkata przekaz jako parametry funkcji.\n");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -42,6 +43,7 @@ void f2()
     int a1,a2,a3;
     char wybor;
     getchar();
+    printf("Zadanie 2. Napisz funkcje int maks(int x, int y, int z), zwracajaca wartosc maksymalna sposrod jej argumentow.\n");
     printf("Czy wyswietlic kod funkcji(Y/N): ");
     do
     {
@@ -78,6 +80,7 @@ void f3()
     char wybor;
     int szer;
     getchar();
+    printf("Zadanie 3. Napisz funkcje long int suma(int n), ktora wyznaczy sume szeregu: 1-2+3-...±n.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -111,6 +114,7 @@ void f4()
     char wybor;
     int a,b;
     getchar();
+    printf("Zadanie 4. Napisz funkcje long int suma(int min, int max), ktora obliczy sume liczb podzielnych przez 3 mieszczacych sie w przedziale <min, max>.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -145,6 +149,7 @@ void f5()
     char wybor;
     int granica;
     getchar();
+    printf("Zadanie 5. Napisz funkcje int wartoscMaks(int granica) ktora znajdzie najwieksza liczbe calkowita n taka, ze 1 + 2 + ... + n < granica.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -178,6 +183,7 @@ void f6()
     char wybor;
     int n;
     getchar();
+    printf("Zadanie 6. Napisz funkcje int min(int t[], int n), ktora dla tablicy o wymiarze n danej jako parametr zwroci wartosc elementu minimalnego.\n");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -247,6 +253,7 @@ void f7()
 {
     char wybor;
     getchar();
+    printf("Zadanie 7. Napisz funkcje, ktora obliczy liczbe wystapien danego znaku w lancuchu.Lancuch oraz znak przekaz jako parametry funkcji.\n");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -311,6 +318,7 @@ void f8()
     char wybor;
     int a,b,c;
     getchar();
+    printf("Zadanie 8. Napisz funkcje, ktora wyswietla wzor rownania kwadratowego (np. x^2+2x-3=0) dla zadanych wartosci wspolczynnikow a, b oraz c. Uwzglednij rozne wartosci oraz znaki wspolczynnikow (aby np. nie wyswietlac 0x^2+-1x+0=0).");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -345,6 +353,7 @@ void f9()
     char wybor;
     int liczba;
     getchar();
+    printf("Zadanie 9. Napisz funkcje, ktora wyswietli na ekranie dwojkowa reprezentacje liczby calkowitej danej jako parametr.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -378,6 +387,7 @@ void f10()
     char wybor;
     float x,y;
     getchar();
+    printf("Zadanie 10. Napisz funkcje, int ktoraCwiartka(float x, float y) ktora dla punktu o wspolrzednych (x, y) zwroci wartosc 1, 2, 3 lub 4, identyfikujaca jedna z cwiartek ukladu wspolrzednych wewnatrz ktorej lezy ten punkt. W przypadku, gdy punkt lezy na ktorejkolwiek osi wspolrzednych funkcja powinna zwrocic 0.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -412,6 +422,7 @@ void f11()
     float x;
     int n;
     getchar();
+    printf("Zadanie 11. Napisz funkcje, float suma(float x, int n), ktora wyznaczy sume szeregu: (x+1)-(x2-2)+(x3+3)-...±(xn±n).");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -447,6 +458,7 @@ void f12()
     float x;
     int n;
     getchar();
+    printf("Zadanie 12. Napisz funkcje float suma(float x, int n), ktora wyznaczy sume szeregu: x+2x2+3x3+...+nxn.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -481,6 +493,7 @@ void f13()
     float x;
     float epsilon;
     getchar();
+    printf("Zadanie 13. Napisz funkcje float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1) wyznaczy sume szeregu: 1 + x + x2/2 + ... + xi/i. Sumowanie przerwij jezeli kolejny skladnik bedzie mniejszy od zadanej dokladnosci epsilon.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -515,6 +528,7 @@ void f14()
     char wybor;
     int liczba;
     getchar();
+    printf("Zadanie 14. Napisz funkcje sprawdzajaca, czy jej argument jest liczba pierwsza.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -550,6 +564,7 @@ void f15()
     int wielkosc;
     float liczba;
     getchar();
+    printf("Zadanie 15. Napisz funkcje, ktora wypisze na ekranie zawartosc danej jako parametr jednowymiarowej tablicy liczb rzeczywistych.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -615,6 +630,7 @@ void f16()
     char wybor;
     int wielkosc,liczba;
     getchar();
+    printf("Zadanie 16. Napisz funkcje, ktora zliczy i wypisze liczbe wystapien elementow tablicy o rozmiarze N.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -678,6 +694,7 @@ void f17()
     char wybor;
     char napis[30];
     getchar();
+    printf("Zadanie 17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow w przekazanym jej napisie. Po jej wykonaniu ostatni znak napisu bedzie pierwszym, przedostatni drugim, itd.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -712,6 +729,7 @@ void f18()
     char wybor;
     char napis[30];
     getchar();
+    printf("Zadanie 18. Napisz funkcje, ktora wyznaczy liczbe slow w danym jako parametr lancuchu. Slowo definiujemy jako ciag znakow oddzielony bialym znakiem lub znakiem przestankowym.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
     do
     {
@@ -805,151 +823,120 @@ int main()
 
     do
     {
-        printf("\t\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n\n");
-        printf("1. Dzial: Funkcje\n2. Dzial: Funkcje,przekazywanie parametrow.\n");
-        printf("\n\n0 - Exit\n");
+        prnt_header();
         scanf("%d",&dzial);
 
         if(dzial == 1)
         {
             do
             {
-                printf("Funkcje\t\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n");
-                printf("Wybierz zadanie(1-17):\n");
-                printf("1. Napisz funkcje, ktora zwroci pole trojkata. Dlugosci bokow trojkata...\n2. Napisz funkcje, int maks(int x, int y, int z), zwracajaca wartosc maksymalna sposrod...\n");
-                printf("3. Napisz funkcje, long int suma(int n), ktora wyznaczy sume szeregu...\n4. Napisz funkcje, long int suma(int min, int max), ktora obliczy sume liczb...\n");
-                printf("5. Napisz funkcje, int wartoscMaks(int granica) ktora znajdzie...\n6. Napisz funkcje, int min(int t[], int n), ktora dla tablicy...\n");
-                printf("7. Napisz funkcje, ktora obliczy liczbe wystapien...\n8. Napisz funkcje, ktora wyswietla wzor rownania kwadratowego (np. x^2+2x-3=0) dla zadanych wartosci...\n");
-                printf("9. Napisz funkcje, ktora wyswietli na ekranie dwojkowa reprezentacje...\n10. Napisz funkcje, int ktoraCwiartka(float x, float y) ktora dla punktu o wspolrzednych (x, y) zwroci wartosc...\n");
-                printf("11. Napisz funkcje, float suma(float x, int n), ktora wyznaczy sume szeregu: (x+1)-(x2-2)+(x3+3)-...±(xn±n).\n12. Napisz funkcje float suma(float x, int n), ktora wyznaczy sume szeregu: x+2x2+3x3+...+nxn.\n");
-                printf("13. Napisz funkcje, float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1)...\n14. Napisz funkcje, sprawdzajaca, czy jej argument jest liczba pierwsza.\n");
-                printf("15. Napisz funkcje, ktora wypisze na ekranie zawartosc...\n16. Napisz funkcje, ktora zliczy i wypisze...\n");
-                printf("17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow...\n18. Napisz funkcje, ktora wyznaczy liczbe slow w...\n");
-                printf("\n\n0 - Exit\n");
+                prnt_func_header();
                 scanf("%d",&number);
 
                 if(number == 1)
                 {
-                    printf("Zadanie 1. Napisz funkcje, ktora zwroci pole trojkata. Dlugosci bokow trojkata przekaz jako parametry funkcji.\n");
                     f1();
                     printf("\n\n");
                 }
 
                 if(number == 2)
                 {
-                    printf("Zadanie 2. Napisz funkcje int maks(int x, int y, int z), zwracajaca wartosc maksymalna sposrod jej argumentow.\n");
                     f2();
                     printf("\n\n");
                 }
 
                 if(number == 3)
                 {
-                    printf("Zadanie 3. Napisz funkcje long int suma(int n), ktora wyznaczy sume szeregu: 1-2+3-...±n.");
                     f3();
                     printf("\n\n");
                 }
 
                 if(number == 4)
                 {
-                    printf("Zadanie 4. Napisz funkcje long int suma(int min, int max), ktora obliczy sume liczb podzielnych przez 3 mieszczacych sie w przedziale <min, max>.");
                     f4();
                     printf("\n\n");
                 }
 
                 if(number == 5)
                 {
-                    printf("Zadanie 5. Napisz funkcje int wartoscMaks(int granica) ktora znajdzie najwieksza liczbe calkowita n taka, ze 1 + 2 + ... + n < granica.");
                     f5();
                     printf("\n\n");
                 }
 
                 if(number == 6)
                 {
-                    printf("Zadanie 6. Napisz funkcje int min(int t[], int n), ktora dla tablicy o wymiarze n danej jako parametr zwroci wartosc elementu minimalnego.\n");
                     f6();
                     printf("\n\n");
                 }
 
                 if(number == 7)
                 {
-                    printf("Zadanie 7. Napisz funkcje, ktora obliczy liczbe wystapien danego znaku w lancuchu.Lancuch oraz znak przekaz jako parametry funkcji.\n");
                     f7();
                     printf("\n\n");
                 }
 
                 if(number == 8)
                 {
-                    printf("Zadanie 8. Napisz funkcje, ktora wyswietla wzor rownania kwadratowego (np. x^2+2x-3=0) dla zadanych wartosci wspolczynnikow a, b oraz c. Uwzglednij rozne wartosci oraz znaki wspolczynnikow (aby np. nie wyswietlac 0x^2+-1x+0=0).");
                     f8();
                     printf("\n\n");
                 }
 
                 if(number == 9)
                 {
-                    printf("Zadanie 9. Napisz funkcje, ktora wyswietli na ekranie dwojkowa reprezentacje liczby calkowitej danej jako parametr.");
                     f9();
                     printf("\n\n");
                 }
 
                 if(number == 10)
                 {
-                    printf("Zadanie 10. Napisz funkcje, int ktoraCwiartka(float x, float y) ktora dla punktu o wspolrzednych (x, y) zwroci wartosc 1, 2, 3 lub 4, identyfikujaca jedna z cwiartek ukladu wspolrzednych wewnatrz ktorej lezy ten punkt. W przypadku, gdy punkt lezy na ktorejkolwiek osi wspolrzednych funkcja powinna zwrocic 0.");
                     f10();
                     printf("\n\n");
                 }
 
                 if(number == 11)
                 {
-                    printf("Zadanie 11. Napisz funkcje, float suma(float x, int n), ktora wyznaczy sume szeregu: (x+1)-(x2-2)+(x3+3)-...±(xn±n).");
                     f11();
                     printf("\n\n");
                 }
 
                 if(number == 12)
                 {
-                    printf("Zadanie 12. Napisz funkcje float suma(float x, int n), ktora wyznaczy sume szeregu: x+2x2+3x3+...+nxn.");
                     f12();
                     printf("\n\n");
                 }
 
                 if(number == 13)
                 {
-                    printf("Zadanie 13. Napisz funkcje float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1) wyznaczy sume szeregu: 1 + x + x2/2 + ... + xi/i. Sumowanie przerwij jezeli kolejny skladnik bedzie mniejszy od zadanej dokladnosci epsilon.");
                     f13();
                     printf("\n\n");
                 }
 
                 if(number == 14)
                 {
-                    printf("Zadanie 14. Napisz funkcje sprawdzajaca, czy jej argument jest liczba pierwsza.");
                     f14();
                     printf("\n\n");
                 }
 
                 if(number == 15)
                 {
-                    printf("Zadanie 15. Napisz funkcje, ktora wypisze na ekranie zawartosc danej jako parametr jednowymiarowej tablicy liczb rzeczywistych.");
                     f15();
                     printf("\n\n");
                 }
 
                 if(number == 16)
                 {
-                    printf("Zadanie 16. Napisz funkcje, ktora zliczy i wypisze liczbe wystapien elementow tablicy o rozmiarze N.");
                     f16();
                     printf("\n\n");
                 }
 
                 if(number == 17)
                 {
-                    printf("Zadanie 17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow w przekazanym jej napisie. Po jej wykonaniu ostatni znak napisu bedzie pierwszym, przedostatni drugim, itd.");
                     f17();
                     printf("\n\n");
                 }
 
                 if(number == 18)
                 {
-                    printf("Zadanie 18. Napisz funkcje, ktora wyznaczy liczbe slow w danym jako parametr lancuchu. Slowo definiujemy jako ciag znakow oddzielony bialym znakiem lub znakiem przestankowym.");
                     f18();
                     printf("\n\n");
                 }
