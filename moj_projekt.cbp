@@ -31,9 +31,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="instrukcje_wejscia.h" />
 		<Unit filename="lib_funkcje.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="lib_funkcje.h" />
+		<Unit filename="lib_funkcje_pp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib_funkcje_pp.h" />
+		<Unit filename="lib_pliki_tekstowe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib_pliki_tekstowe.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

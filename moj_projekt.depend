@@ -27,3 +27,34 @@
 
 1671215806 c:\users\adama\desktop\studia\zadania c\aplikacja konsolowa\lib_funkcje.h
 
+1675550813 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje.c
+	<stdio.h>
+	<math.h>
+	<stdbool.h>
+	<limits.h>
+	<string.h>
+	<ctype.h>
+
+1675551439 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\main.c
+	<stdio.h>
+	"lib_funkcje.h"
+	"lib_funkcje_pp.h"
+
+1675550901 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje.h
+
+1675514675 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje_pp.h
+	<stdbool.h>
+
+1672086440 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_prnt.h
+
+1671804350 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje_pp.c
+	<stdio.h>
+	<stdbool.h>
+
+1672085232 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_pliki_tekstowe.c
+	<stdio.h>
+	<stdbool.h>
+
+1672086466 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_prnt.c
+	<stdlib.h>
+

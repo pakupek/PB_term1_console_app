@@ -2,51 +2,52 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="lib_funkcje.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib_funkcje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6583" topLine="31" />
+			<Cursor1 position="612" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="13" />
-			<Collapse line="31" />
-			<Collapse line="41" />
-			<Collapse line="54" />
-			<Collapse line="67" />
-			<Collapse line="82" />
-			<Collapse line="103" />
-			<Collapse line="118" />
-			<Collapse line="213" />
-			<Collapse line="233" />
-			<Collapse line="247" />
-			<Collapse line="310" />
-			<Collapse line="317" />
-			<Collapse line="352" />
-			<Collapse line="369" />
-			<Collapse line="380" />
-		</Folding>
 	</File>
 	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="16014" topLine="295" />
+			<Cursor1 position="34896" topLine="237" />
 		</Cursor>
 		<Folding>
-			<Collapse line="5" />
-			<Collapse line="41" />
-			<Collapse line="79" />
-			<Collapse line="114" />
-			<Collapse line="150" />
-			<Collapse line="185" />
-			<Collapse line="258" />
-			<Collapse line="323" />
-			<Collapse line="332" />
-			<Collapse line="367" />
-			<Collapse line="402" />
-			<Collapse line="437" />
-			<Collapse line="534" />
-			<Collapse line="581" />
-			<Collapse line="591" />
-			<Collapse line="599" />
-			<Collapse line="623" />
+			<Collapse line="7" />
+			<Collapse line="56" />
+			<Collapse line="106" />
+			<Collapse line="155" />
+			<Collapse line="204" />
+			<Collapse line="253" />
+			<Collapse line="339" />
+			<Collapse line="415" />
+			<Collapse line="464" />
+			<Collapse line="513" />
+			<Collapse line="561" />
+			<Collapse line="611" />
+			<Collapse line="661" />
+			<Collapse line="711" />
+			<Collapse line="760" />
+			<Collapse line="842" />
+			<Collapse line="919" />
+			<Collapse line="1048" />
+		</Folding>
+	</File>
+	<File name="lib_funkcje.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8667" topLine="173" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="36" />
+			<Collapse line="52" />
+			<Collapse line="76" />
+			<Collapse line="111" />
+			<Collapse line="116" />
+			<Collapse line="209" />
+			<Collapse line="226" />
+			<Collapse line="244" />
+			<Collapse line="345" />
+			<Collapse line="377" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

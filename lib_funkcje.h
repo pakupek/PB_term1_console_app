@@ -13,7 +13,7 @@ float suma3(float x, int n);
 float suma4(float x, int n);
 float suma5(float x, float epsilon);
 void czy_pierwsza(int liczba);
-void wypisz_tab(float *t);
+void wypisz_tab(int w,float t[w]);
 int zlicz(int t[], int n);
 void odwroc(char str[]);
 int liczba_slow(char *lancuch);
