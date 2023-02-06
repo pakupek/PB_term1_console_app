@@ -17,4 +17,3 @@ void wypisz_tab(int w,float t[w]);
 int zlicz(int t[], int n);
 void odwroc(char str[]);
 int liczba_slow(char *lancuch);
-

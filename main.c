@@ -199,127 +199,127 @@ int main()
                 }
                 if(number == 3)
                 {
-                    printf("Zadanie 6.3: ");
+                    printf("Zadanie 6.3: Napisz funkcje void mins(int ar[], int n, int *m1, int *m2, int *m3), ktora przyjmuje jako argument tablice ar o rozmiarze n i wyszukuje w niej trzy najmniejsze wartosci (nie liczac powtorzen), np. przyjmujac ar={4, 2, 6, 1, 2, 5} zwracamy m1=1, m2=2, m3=4.");
                     fpp3();
                     printf("\n\n");
                 }
                 if(number == 4)
                 {
-                    printf("Zadanie 6.4: ");
+                    printf("Zadanie 6.4: Napisz funkcje void wypelnijLosowo(int t[], int n, int a, int b) wypelniajaca jednowymiarowa tablice losowymi wartosciami z przedzialu <a, b>.");
                     fpp4();
                     printf("\n\n");
                 }
                 if(number == 5)
                 {
-                    printf("Zadanie 6.5: ");
+                    printf("Zadanie 6.5: Napisz funkcje void odwroc(char p[]), ktora bedzie odwracala kolejnosc znakow w przekazanym jej napisie. Po jej wykonaniu ostatni znak napisu bedzie pierwszym, przedostatni drugim, itd.");
                     fpp5();
                     printf("\n\n");
                 }
                 if(number == 6)
                 {
-                    printf("Zadanie 6.6: ");
+                    printf("Zadanie 6.6: Napisz funkcje ktora w lancuchu danym jako parametr zamieni wszystkie male litery na wielkie.");
                     fpp6();
                     printf("\n\n");
                 }
                 if(number == 7)
                 {
-                    printf("Zadanie 6.7: ");
+                    printf("Zadanie 6.7: Napisz funkcje void fill(float ar[], int n, float a, float b), ktora wypelni tablice ar o rozmiarze n wartosciami z przedzialu [a, b] - np. dla n=5, a=2.3, b=4.7 wypelniamy tablice wartosciami {2.3, 2.9, 3.5, 4.1, 4.7}.");
                     fpp7();
                     printf("\n\n");
                 }
                 if(number == 8)
                 {
-                    printf("Zadanie 6.8: ");
+                    printf("Zadanie 6.8: Napisz funkcje void roundArray(float in[], int out[], int n), ktora przyjmuje jako argumenty dwie tablice o rozmiarze n, a nastepnie przepisuje do tablicy out wszystkie wartosci z tablicy in zaokraglone do wartosci calkowitej (zgodnie z matematycznymi zasadami) - np. in = {3.5, 4.7, 2.2, 2.5, 1.4}, wowczas out = {4, 5, 2, 2, 1}.");
                     fpp8();
                     printf("\n\n");
                 }
                 if(number == 9)
                 {
-                    printf("Zadanie 6.9: ");
+                    printf("Zadanie 6.9: Napisz funkcje bool someEven(int ar[], int n), ktora przyjmuje jako argument tablice ar o rozmiarze n i sprawdza czy w tablicy znajduje sie jakakolwiek wartosc parzysta. Typ bool udostępnia biblioteka <stdbool.h>.");
                     fpp9();
                     printf("\n\n");
                 }
                 if(number == 10)
                 {
-                    printf("Zadanie 6.10: ");
+                    printf("Zadanie 6.10: Napisz funkcje void pole_obwod(float R, float *p, float *o), ktora obliczy i zwroci poprzez parametry pole i obwod kola o promieniu R.");
                     fpp10();
                     printf("\n\n");
                 }
                 if(number == 11)
                 {
-                    printf("Zadanie 6.11: ");
+                    printf("Zadanie 6.11: Napisz funkcje void min_max(int t[], int n, int *min, int *max), ktora dla tablicy o wymiarze n danej jako parametr znajdzie i zwroci poprzez parametry wartosci elementow minimalnego i maksymalnego.");
                     fpp11();
                     printf("\n\n");
                 }
                 if(number == 12)
                 {
-                    printf("Zadanie 6.12: ");
+                    printf("Zadanie 6.12: Napisz funkcje ktora dla lancucha danego jako parametr obliczy i zwroci liczbe wystepujacych w nim liter oraz liczbe wystepujacych w nim cyfr.");
                     fpp12();
                     printf("\n\n");
                 }
                 if(number == 13)
                 {
-                    printf("Zadanie 6.13: ");
+                    printf("Zadanie 6.13: Napisz funkcje int min(int ar[], int n, int *count), ktora przyjmuje jako argument tablice ar o rozmiarze n i znajduje w niej wartosc najmniejszą, a w parametrze count zwraca liczbe jej wystapien, np. przyjmujac ar={4, 2, 6, 2, 2, 5} zwracamy 2, zas cout=3.");
                     fpp13();
                     printf("\n\n");
                 }
                 if(number == 14)
                 {
-                    printf("Zadanie 6.14: ");
+                    printf("Zadanie 6.14: Napisz funkcje int pierwiastki(float a, float b, float c, float *x1, float *x2), ktora przyjmuje jako parametry wspolczynniki rownania kwadratowego i liczy jego pierwiastki - przez return zwracana jest liczba pierwiastkow (0, 1 lub 2), zas w parametrach x1 oraz x2 zwracamy ich wartosci.");
                     fpp14();
                     printf("\n\n");
                 }
                 if(number == 15)
                 {
-                    printf("Zadanie 6.15: ");
+                    printf("Zadanie 6.15: Napisz funkcje bool read(char str[], int *value), ktora wczytuje od uzytkownika wartosc typu int, wyswietlajac komunikat zachety przekazany jako parametr str. Zwracamy informacje o tym czy udalo sie wczytac wartosc.");
                     fpp15();
                     printf("\n\n");
                 }
                 if(number == 16)
                 {
-                    printf("Zadanie 6.16: ");
+                    printf("Zadanie 6.16: Napisz funkcje void wypisz(float *ar, int n), ktora wypisuje zawartosc tablicy ar przekazanej jako parametr, oddzielajac jej wartosci przecinkami i zaokraglajac do dwoch miejsc po przecinku. Uzyj tej funkcji wypisywac fragment zawartosci tablicy (jako parametr przekaz wskaznik na srodek tablicy).");
                     fpp16();
                     printf("\n\n");
                 }
                 if(number == 17)
                 {
-                    printf("Zadanie 6.17: ");
+                    printf("Zadanie 6.17: Napisz funkcje void wypelnijB(int A[], int B[], int n), ktora na podstawie tablicy liczb calkowitych A wypelni tablice B wg nastepujacego wzoru: B[i] = A[0]-A[1]+A[2]-...A[i].");
                     fpp17();
                     printf("\n\n");
                 }
                 if(number == 18)
                 {
-                    printf("Zadanie 6.18: ");
+                    printf("Zadanie 6.18: Napisz funkcje void skaluj(float t[], int n), ktora przeskaluje elementy tablicy danej jako parametr do przedzialu <0, 1>.");
                     fpp18();
                     printf("\n\n");
                 }
                 if(number == 19)
                 {
-                    printf("Zadanie 6.19: ");
+                    printf("Zadanie 6.19: Napisz funkcje, ktora sortuje metodą babelkowa tablice liczb calkowitych dana jako parametr. Stworz pomocnicza funkcje zamieniajaca ze soba wartosci komorek tablicy.");
                     fpp19();
                     printf("\n\n");
                 }
                 if(number == 20)
                 {
-                    printf("Zadanie 6.20: ");
+                    printf("Zadanie 6.20: Napisz funkcje implementujaca sortowanie przez wybor dla napisow. Stworz pomocnicza funkcje zamieniajaca ze soba wartosci komorek tablicy.");
                     fpp20();
                     printf("\n\n");
                 }
                 if(number == 21)
                 {
-                    printf("Zadanie 6.21: ");
+                    printf("Zadanie 6.21: Napisz funkcje int crop(float ar[], int n, float a, float b), ktora przyjmuje jako parametr tablice ar o rozmiarze n, a nastepnie obcina jej wartosci do zakresu [a, b]. Zwracamy informacje ile wartosci zostalo obcietych. Np. dla ar={2.3, 1.6, 2.7, 3.7, 5, 3.1}, a=2, b=3.5, zwracamy 3, zas ar wyniesie {2.3, 2.0, 2.7, 3.5, 3.5, 3.1}.");
                     fpp21();
                     printf("\n\n");
                 }
                 if(number == 22)
                 {
-                    printf("Zadanie 6.22: ");
+                    printf("Zadanie 6.22: Napisz funkcje void removeRepeats(int in[], int out[], int n), ktora przyjmuje jako argumenty dwie tablice o rozmiarze n, a nastepnie przepisuje do tablicy out kolejne wartosci z tablicy in, pomijajac powtorzenia i w razie czego uzupelniajac tablice zerami - np. in = {2, 3, 3, 2, 4, 4, 4, 3}, wowczas out = {2, 3, 2, 4, 3, 0, 0, 0}.");
                     fpp22();
                     printf("\n\n");
                 }
                 if(number == 23)
                 {
-                    printf("Zadanie 6.23: ");
+                    printf("Zadanie 6.23: Napisz funkcje void doubleEven(int in[], int out[], int n), ktora przyjmuje jako argumenty dwie tablice o rozmiarze n, a nastepnie przepisuje do tablicy out kolejne wartosci z tablicy in, podwajajac kazde wystapienie wartosci parzystej (wartosci ktore nie zmieszcze sie w tablicy wynikowej, nalezy pominac), np. in = {1, 2, 3, 4, 5}, wowczas out = {1, 2, 2, 3, 4}.");
                     fpp23();
                     printf("\n\n");
                 }

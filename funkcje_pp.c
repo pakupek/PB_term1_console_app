@@ -185,3 +185,826 @@ void fpp2()
         }
     }
 }
+
+void fpp3()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            int rozmiar;
+            printf("Aby uruchomic funkcje utworz tablice liczb naturalnych:\n");
+            printf("Podaj rozmiar tablicy (wiekszy niz 3): ");
+            while(1)
+            {
+                scanf("%d",&rozmiar);
+                if(rozmiar>0 && rozmiar>3)
+                {
+                    int tab[rozmiar],liczba;
+                    for(int i=0;i<rozmiar;i++)
+                    {
+                        printf("Wprowadz liczbe: ");
+                        scanf("%d",&liczba);
+                        tab[i] = liczba;
+                    }
+                    int l1,l2,l3;
+                    mins(tab,rozmiar,&l1,&l2,&l3);
+                    printf("Trzy najmniejsze wartosci w tablicy: %d,%d,%d\n",l1,l2,l3);
+                    break;
+                }
+                else
+                    printf("Tablica nie moze byc ujemna!\nPopraw dane\n");
+            }
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            int rozmiar;
+            printf("Aby uruchomic funkcje utworz tablice liczb naturalnych:\n");
+            printf("Podaj rozmiar tablicy (wiekszy niz 3): ");
+            while(1)
+            {
+                scanf("%d",&rozmiar);
+                if(rozmiar>0 && rozmiar>3)
+                {
+                    int tab[rozmiar],liczba;
+                    for(int i=0;i<rozmiar;i++)
+                    {
+                        printf("Wprowadz liczbe: ");
+                        scanf("%d",&liczba);
+                        tab[i] = liczba;
+                    }
+                    int l1,l2,l3;
+                    mins(tab,rozmiar,&l1,&l2,&l3);
+                    printf("Trzy najmniejsze wartosci w tablicy: %d,%d,%d\n",l1,l2,l3);
+                    break;
+                }
+                else
+                    printf("Tablica nie moze byc ujemna!\nPopraw dane\n");
+            }
+            break;
+        }
+        else
+            printf("Nieprawidlowy wybor!\n");
+    }
+}
+
+void fpp4()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp5()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp6()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp7()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp8()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp9()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp10()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp11()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp12()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp13()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp14()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp15()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp16()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp17()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp18()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp19()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp20()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp21()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp22()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}
+
+void fpp23()
+{
+    char wybor;
+    getchar();
+    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    while(1)
+    {
+        wybor = getchar();
+        printf("\n");
+        if(wybor == 'Y' || wybor == 'y')
+        {
+            FILE *plik;
+            plik = fopen("lib_funkcje_pp.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=53)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            break;
+        }
+        if(wybor == 'N' || wybor == 'n')
+        {
+            break;
+        }
+        else
+            printf("Nieprawidlowa wartosc!\n");
+    }
+}

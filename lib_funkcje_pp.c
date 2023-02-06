@@ -50,3 +50,32 @@ int min_max(int t[], int n, int *min, int *max, int *licznik_max, int *licznik_m
             continue;
     }
 }
+
+void mins(int ar[], int n, int *m1, int *m2, int *m3)
+{
+    int tmp;
+    printf("Otrzymana tablica:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%4d",ar[i]);
+    }
+    //sortowanie
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n-1;j++)
+        {
+            if(ar[j]>ar[j+1])
+            {
+                tmp = ar[j];
+                ar[j] = ar[j+1];
+                ar[j+1] = tmp;
+            }
+        }
+    }
+    printf("\n");
+    *m1 = ar[0];
+    *m2 = ar[1];
+    *m3 = ar[2];
+}
+
+
