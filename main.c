@@ -197,6 +197,133 @@ int main()
                     fpp2();
                     printf("\n\n");
                 }
+                if(number == 3)
+                {
+                    printf("Zadanie 6.3: ");
+                    fpp3();
+                    printf("\n\n");
+                }
+                if(number == 4)
+                {
+                    printf("Zadanie 6.4: ");
+                    fpp4();
+                    printf("\n\n");
+                }
+                if(number == 5)
+                {
+                    printf("Zadanie 6.5: ");
+                    fpp5();
+                    printf("\n\n");
+                }
+                if(number == 6)
+                {
+                    printf("Zadanie 6.6: ");
+                    fpp6();
+                    printf("\n\n");
+                }
+                if(number == 7)
+                {
+                    printf("Zadanie 6.7: ");
+                    fpp7();
+                    printf("\n\n");
+                }
+                if(number == 8)
+                {
+                    printf("Zadanie 6.8: ");
+                    fpp8();
+                    printf("\n\n");
+                }
+                if(number == 9)
+                {
+                    printf("Zadanie 6.9: ");
+                    fpp9();
+                    printf("\n\n");
+                }
+                if(number == 10)
+                {
+                    printf("Zadanie 6.10: ");
+                    fpp10();
+                    printf("\n\n");
+                }
+                if(number == 11)
+                {
+                    printf("Zadanie 6.11: ");
+                    fpp11();
+                    printf("\n\n");
+                }
+                if(number == 12)
+                {
+                    printf("Zadanie 6.12: ");
+                    fpp12();
+                    printf("\n\n");
+                }
+                if(number == 13)
+                {
+                    printf("Zadanie 6.13: ");
+                    fpp13();
+                    printf("\n\n");
+                }
+                if(number == 14)
+                {
+                    printf("Zadanie 6.14: ");
+                    fpp14();
+                    printf("\n\n");
+                }
+                if(number == 15)
+                {
+                    printf("Zadanie 6.15: ");
+                    fpp15();
+                    printf("\n\n");
+                }
+                if(number == 16)
+                {
+                    printf("Zadanie 6.16: ");
+                    fpp16();
+                    printf("\n\n");
+                }
+                if(number == 17)
+                {
+                    printf("Zadanie 6.17: ");
+                    fpp17();
+                    printf("\n\n");
+                }
+                if(number == 18)
+                {
+                    printf("Zadanie 6.18: ");
+                    fpp18();
+                    printf("\n\n");
+                }
+                if(number == 19)
+                {
+                    printf("Zadanie 6.19: ");
+                    fpp19();
+                    printf("\n\n");
+                }
+                if(number == 20)
+                {
+                    printf("Zadanie 6.20: ");
+                    fpp20();
+                    printf("\n\n");
+                }
+                if(number == 21)
+                {
+                    printf("Zadanie 6.21: ");
+                    fpp21();
+                    printf("\n\n");
+                }
+                if(number == 22)
+                {
+                    printf("Zadanie 6.22: ");
+                    fpp22();
+                    printf("\n\n");
+                }
+                if(number == 23)
+                {
+                    printf("Zadanie 6.23: ");
+                    fpp23();
+                    printf("\n\n");
+                }
+
             } while (number != 0);
 
         }
