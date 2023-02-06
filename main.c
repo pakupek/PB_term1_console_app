@@ -32,7 +32,16 @@ void print_funkcje_parametry_header()
 {
     printf("Funkcje przekazywanie parametrow\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n");
     printf("Wybierz zadanie (1-23):\n");
-    printf("1. Napisz funkcje void pole_obwod(float a, float b, float c, float *pole, float *R), ktora obliczy...\n2. Napisz funkcje, ktora dla tablicy liczb calkowitych danej jako parametr obliczy i zwroci...");
+    printf("1. Napisz funkcje void pole_obwod(float a, float b, float c, float *pole, float *R), ktora obliczy...\n2. Napisz funkcje, ktora dla tablicy liczb calkowitych danej jako parametr obliczy i zwroci...\n");
+    printf("3. Napisz funkcje void mins(int ar[], int n, int *m1, int *m2, int *m3), ktora przyjmuje...\n4. Napisz funkcje void wypelnijLosowo(int t[], int n, int a, int b) wypelniajaca...\n");
+    printf("5. Napisz funkcje void odwroc(char p[]), ktora bedzie odwracala...\n6. Napisz funkcje, ktora w lancuchu danym jako...\n7. Napisz funkcje void fill(float ar[], int n, float a, float b), ktora wypelni...\n");
+    printf("8. Napisz funkcje void roundArray(float in[], int out[], int n), ktora przyjmuje jako...\n9. Napisz funkcje bool someEven(int ar[], int n), ktora przyjmuje jako...\n");
+    printf("10. Napisz funkcje void pole_obwod(float R, float *p, float *o), ktora obliczy i...\n11. Napisz funkcje void min_max(int t[], int n, int *min, int *max), ktora dla tablicy o...\n");
+    printf("12. Napisz funkcje, ktora dla lancucha danego...\n13. Napisz funkcje int min(int ar[], int n, int *count), ktora przyjmuje jako...\n14. Napisz funkcje int pierwiastki(float a, float b, float c, float *x1, float *x2), ktora przyjmuje jako parametry...\n");
+    printf("15. Napisz funkcje bool read(char str[], int *value), ktora wczytuje od...\n16. Napisz funkcje void wypisz(float *ar, int n), ktora wypisuje zawartosc...\n");
+    printf("17. Napisz funkcje void wypelnijB(int A[], int B[], int n), ktora na podstawie tablicy...\n18. Napisz funkcje void skaluj(float t[], int n), ktora przeskaluje...\n");
+    printf("19. Napisz funkcje ktora sortuje metoda babelkowa...\n20. Napisz funkcje implementujaca sortowanie przez...\n21. Napisz funkcje int crop(float ar[], int n, float a, float b), ktora przyjmuje jako parametr...\n");
+    printf("22. Napisz funkcje void removeRepeats(int in[], int out[], int n), ktora przyjmuje jako argumenty...\n23. Napisz funkcje void doubleEven(int in[], int out[], int n), ktora przyjmuje jako argumenty...\n");
     printf("\n\n0 - Exit\n");
 }
 
