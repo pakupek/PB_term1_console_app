@@ -6,8 +6,7 @@ void f1()
     int b1,b2,b3;
     char wybor;
     getchar();
-    printf("Zadanie 1. Napisz funkcje, ktora zwroci pole trojkata. Dlugosci bokow trojkata przekaz jako parametry funkcji.\n");
-    printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
+    printf("Czy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
         wybor = getchar();
@@ -54,7 +53,6 @@ void f2()
     int a1,a2,a3;
     char wybor;
     getchar();
-    printf("Zadanie 2. Napisz funkcje int maks(int x, int y, int z), zwracajaca wartosc maksymalna sposrod jej argumentow.\n");
     printf("Czy wyswietlic kod funkcji(Y/N): ");
     while(1)
     {
@@ -103,7 +101,6 @@ void f3()
     char wybor;
     int szer;
     getchar();
-    printf("Zadanie 3. Napisz funkcje long int suma(int n), ktora wyznaczy sume szeregu: 1-2+3-...+-n.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -151,7 +148,6 @@ void f4()
     char wybor;
     int a,b;
     getchar();
-    printf("Zadanie 4. Napisz funkcje long int suma(int min, int max), ktora obliczy sume liczb podzielnych przez 3 mieszczacych sie w przedziale <min, max>.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -199,7 +195,6 @@ void f5()
     char wybor;
     int granica;
     getchar();
-    printf("Zadanie 5. Napisz funkcje int wartoscMaks(int granica) ktora znajdzie najwieksza liczbe calkowita n taka, ze 1 + 2 + ... + n < granica.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -247,8 +242,7 @@ void f6()
     char wybor;
     int n;
     getchar();
-    printf("Zadanie 6. Napisz funkcje int min(int t[], int n), ktora dla tablicy o wymiarze n danej jako parametr zwroci wartosc elementu minimalnego.\n");
-    printf("\nCzy wyswietlic kod funkcji?(Y/N):\n");
+    printf("Czy wyswietlic kod funkcji?(Y/N):\n");
     while(1)
     {
         wybor = getchar();
@@ -332,7 +326,6 @@ void f7()
 {
     char wybor;
     getchar();
-    printf("Zadanie 7. Napisz funkcje, ktora obliczy liczbe wystapien danego znaku w lancuchu.Lancuch oraz znak przekaz jako parametry funkcji.\n");
     printf("Czy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -409,7 +402,6 @@ void f8()
     char wybor;
     int a,b,c;
     getchar();
-    printf("Zadanie 8. Napisz funkcje, ktora wyswietla wzor rownania kwadratowego (np. x^2+2x-3=0) dla zadanych wartosci wspolczynnikow a, b oraz c. Uwzglednij rozne wartosci oraz znaki wspolczynnikow (aby np. nie wyswietlac 0x^2+-1x+0=0).");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -458,7 +450,6 @@ void f9()
     char wybor;
     int liczba;
     getchar();
-    printf("Zadanie 9. Napisz funkcje, ktora wyswietli na ekranie dwojkowa reprezentacje liczby calkowitej danej jako parametr.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -503,10 +494,10 @@ void f9()
 
 void f10()
 {
+    int ktoraCwiartka(float x, float y);
     char wybor;
     float x,y;
     getchar();
-    printf("Zadanie 10. Napisz funkcje, int ktoraCwiartka(float x, float y) ktora dla punktu o wspolrzednych (x, y) zwroci wartosc 1, 2, 3 lub 4, identyfikujaca jedna z cwiartek ukladu wspolrzednych wewnatrz ktorej lezy ten punkt. W przypadku, gdy punkt lezy na ktorejkolwiek osi wspolrzednych funkcja powinna zwrocic 0.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -555,7 +546,6 @@ void f11()
     float x;
     int n;
     getchar();
-    printf("Zadanie 11. Napisz funkcje, float suma(float x, int n), ktora wyznaczy sume szeregu: (x+1)-(x2-2)+(x3+3)-...+-(xn+-n).");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -600,11 +590,11 @@ void f11()
 
 void f12()
 {
+    float suma4(float x, int n);
     char wybor;
     float x;
     int n;
     getchar();
-    printf("Zadanie 12. Napisz funkcje float suma(float x, int n), ktora wyznaczy sume szeregu: x+2x2+3x3+...+nxn.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -649,11 +639,11 @@ void f12()
 
 void f13()
 {
+    float suma5(float x, float epsilon);
     char wybor;
     float x;
     float epsilon;
     getchar();
-    printf("Zadanie 13. Napisz funkcje float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1) wyznaczy sume szeregu: 1 + x + x2/2 + ... + xi/i. Sumowanie przerwij jezeli kolejny skladnik bedzie mniejszy od zadanej dokladnosci epsilon.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -701,7 +691,6 @@ void f14()
     char wybor;
     int liczba;
     getchar();
-    printf("Zadanie 14. Napisz funkcje sprawdzajaca, czy jej argument jest liczba pierwsza.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -750,7 +739,6 @@ void f15()
     int wielkosc;
     float liczba;
     getchar();
-    printf("Zadanie 15. Napisz funkcje, ktora wypisze na ekranie zawartosc danej jako parametr jednowymiarowej tablicy liczb rzeczywistych.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -764,7 +752,7 @@ void f15()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=302)
+                if(l>=307)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -830,7 +818,6 @@ void f16()
     char wybor;
     int wielkosc,liczba;
     getchar();
-    printf("Zadanie 16. Napisz funkcje, ktora zliczy i wypisze liczbe wystapien elementow tablicy o rozmiarze N.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -844,7 +831,7 @@ void f16()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=309)
+                if(l>=314)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -906,7 +893,6 @@ void f17()
     char wybor;
     char napis[30];
     getchar();
-    printf("Zadanie 17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow w przekazanym jej napisie. Po jej wykonaniu ostatni znak napisu bedzie pierwszym, przedostatni drugim, itd.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -920,7 +906,7 @@ void f17()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=344)
+                if(l>=349)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -938,7 +924,9 @@ void f17()
         }
         if(wybor == 'N' || wybor == 'n')
         {
+            getchar();
             printf("Aby uruchomic funkcje stworz napis do odwrocenia:");
+            printf("\nWprowadz napis: ");
             gets(napis);
             odwroc(napis);
             break;
@@ -956,7 +944,6 @@ void f18()
     char wybor;
     char napis[30];
     getchar();
-    printf("Zadanie 18. Napisz funkcje, ktora wyznaczy liczbe slow w danym jako parametr lancuchu. Slowo definiujemy jako ciag znakow oddzielony bialym znakiem lub znakiem przestankowym.");
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
     {
@@ -1001,7 +988,6 @@ void f18()
     }
 }
 
-//ostanie zadanie z funkcji do zrobienia!
 void f19()
 {
     char wybor;
@@ -1012,11 +998,69 @@ void f19()
         scanf("%c",&wybor);
         if(wybor == 'Y' || wybor == 'y')
         {
-            printf("void czy_ciag( char *ciag_1, char *ciag_2)\n{\n  int n=strlen(ciag_1),m=strlen(ciag_2),i,j;\n  char wynik[i][j];");
+            FILE *plik;
+            plik = fopen("lib_funkcje.c","r");
+            char linia[256];
+            int l=0;
+            while(fgets(linia,256,plik)!=NULL)
+            {
+                if(l>=377)
+                {
+                    if(strlen(linia)<=1)
+                        break;
+                    puts(linia);
+                }
+                l++;
+            }
+            fclose(plik);
+            printf("Aby uruchomic funkcje podaj dwa ciagi znakow...\nPodaj dwa ciagi (max 100 znakow)...\n");
+            char znak1[100],znak2[100];
+            getchar();
+            printf("Podaj ciag #1: ");
+            gets(znak1);
+            while(strlen(znak1)<0)
+            {
+                printf("Ciag znakow nie moze byc pusty!\nPopraw dane: ");
+                gets(znak1);
+            }
+            printf("Podaj ciag #2: ");
+            gets(znak2);
+            while(strlen(znak2)<0)
+            {
+                printf("Ciag znakow nie moze byc pusty!\nPopraw dane: ");
+                gets(znak2);
+            }
+            int c1=strlen(znak1),c2=strlen(znak2);
+            if(czy_ciag(znak1,znak2,c1,c2))
+                printf("Ciag '%s' jest podciagiem '%s'\n",znak1,znak2);
+            else
+                printf("Ciag '%s' nie jest podciagiem '%s'\n",znak1,znak2);
             break;
         }
         if(wybor == 'N' || wybor == 'n')
         {
+            printf("Aby uruchomic funkcje podaj dwa ciagi znakow...\nPodaj dwa ciagi (max 100 znakow)...\n");
+            char znak1[100],znak2[100];
+            getchar();
+            printf("Podaj ciag #1: ");
+            gets(znak1);
+            while(strlen(znak1)<0)
+            {
+                printf("Ciag znakow nie moze byc pusty!\nPopraw dane: ");
+                gets(znak1);
+            }
+            printf("Podaj ciag #2: ");
+            gets(znak2);
+            while(strlen(znak2)<0)
+            {
+                printf("Ciag znakow nie moze byc pusty!\nPopraw dane: ");
+                gets(znak2);
+            }
+            int c1=strlen(znak1),c2=strlen(znak2);
+            if(czy_ciag(znak1,znak2,c1,c2))
+                printf("Ciag '%s' jest podciagiem '%s'\n",znak1,znak2);
+            else
+                printf("Ciag '%s' nie jest podciagiem '%s'\n",znak1,znak2);
             break;
         }
         else

@@ -1,4 +1,24 @@
 #include <stdbool.h>
-
-bool pole_obwod(float a, float b, float c, float *pole, float *R);
+void pole_obwod(float a, float b, float c, float *pole, float *R);
 int min_max(int t[], int n, int *min, int *max, int *licznik_max, int *licznik_min);
+void mins(int ar[], int n, int *m1, int *m2, int *m3);
+void wypelnijLosowo(int t[], int n, int a, int b);
+void odwroc_napis(char p[]);
+void lower_to_upper(char p[]);
+void fill_array(int n, float ar[n], float in, float out);
+void roundArray(float in[], int out[], int n);
+bool someEven(int ar[], int n);
+float pole_obwod_kola(float ,float*, float*);
+void minimum_maximum(int t[], int n, int *min, int *max);
+void aplha_num(char p[]);
+int min_count(int ar[], int n, int *count);
+int pierwiastki(float , float , float , float *, float *);
+bool read(char str[], int *value);
+void wypisz(float *ar, int n);
+void wypelnijB(int A[], int B[], int n);
+void skaluj(float t[], int n);
+void sort_by_selection(char **arr, int n);
+void swap_values(char **arr, int idx1, int idx2);
+int crop(float ar[], int n, float a, float b);
+void removeRepeats(int in[], int out[], int n);
+void doubleEven(int in[], int out[], int n);

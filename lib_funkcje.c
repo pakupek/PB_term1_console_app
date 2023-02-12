@@ -48,11 +48,11 @@ long int suma1(int n)
 
 long int suma2(int min, int max)
 {
-    int sum,i;
-    for(i=min;i>=min && i<=max;i++)
+    int sum=0;
+    for(int i=min;i>=min && i<=max;i++)
     {
         if(i%3 == 0)
-            sum += 1;
+            sum += i;
         else
             continue;
     }
@@ -227,13 +227,13 @@ int ktoraCwiartka(float x, float y)
 {
     if(x>0 && y>0)
         printf("Cwiartka 1");
-    else if(x>0 && y<0)
+    if(x>0 && y<0)
         printf("Cwiartka 4");
-    else if(x<0 && y>0)
+    if(x<0 && y>0)
         printf("Cwiartka 2");
-    else if(x<0 && y<0)
+    if(x<0 && y<0)
         printf("Cwiartka 3");
-    else if(x==0 && y==0)
+    if(x==0 && y==0)
         printf("0");
 }
 
@@ -286,18 +286,23 @@ float suma5(float x, float epsilon)
 void czy_pierwsza(int liczba)
 {
     int i;
+    bool pierwsza = false;
     if(liczba>2)
     {
         for(i=2;i*i<=liczba;i++)
         {
             if(liczba%i==0)
-                printf("Podana liczba nie jest pierwsza!");
+                pierwsza = false;
             else
-                printf("Podana liczba jest pierwsza!");
+                pierwsza = true;
         }
+        if(pierwsza == true)
+            printf("Podana liczba jest pierwsza!\n");
+        else
+            printf("Podana liczba nie jest pierwsza!\n");
     }
     else
-        printf("Podana liczba nie jest pierwsza!");
+        printf("Podana liczba nie jest pierwsza!\n");
 }
 
 void wypisz_tab(int w, float t[w])
@@ -370,21 +375,18 @@ int liczba_slow(char *lancuch)
     printf("Liczba slow wynosi %d",slowo+1);
 }
 
-void czy_ciag( char *ciag_1, char *ciag_2)
+int czy_ciag(char *ciag_1, char *ciag_2, int k, int n)
 {
-    int n=strlen(ciag_1),m=strlen(ciag_2),i,j;
-    char wynik[i][j];
-    for(i=0,j=0;i<n && j<n;i++,j++)
+    int i, j;
+    for (i = 0; i <= n - k; i++)
     {
-        if(ciag_1[i] == ciag_2[j])
+        for (j = 0; j < k; j++)
         {
-            wynik[i][j] = ciag_1[i];
-            printf("%c\n",wynik[i][j]);
+            if (ciag_1[j] != ciag_2[i + j])
+                break;
         }
-
+        if(j == k)
+            return 1;
     }
-    for(i=0,j=0;i<n && j<m;i++,j++)
-    {
-        printf("%4c\n",wynik[i][j]);
-    }
+    return 0;
 }

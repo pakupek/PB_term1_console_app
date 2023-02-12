@@ -4,7 +4,6 @@
 #include "funkcje_pp.h"
 #include "funkcje.h"
 
-
 void print_function_header()
 {
     printf("Funkcje\t\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n");
@@ -18,6 +17,7 @@ void print_function_header()
     printf("13. Napisz funkcje, float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1)...\n14. Napisz funkcje, sprawdzajaca, czy jej argument jest liczba pierwsza.\n");
     printf("15. Napisz funkcje, ktora wypisze na ekranie zawartosc...\n16. Napisz funkcje, ktora zliczy i wypisze...\n");
     printf("17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow...\n18. Napisz funkcje, ktora wyznaczy liczbe slow w...\n");
+    printf("19. Napisz funkcje, ktora sprawdzi, czy k-elementowy ciag...\n");
     printf("\n\n0 - Exit\n");
 }
 
@@ -45,8 +45,6 @@ void print_funkcje_parametry_header()
     printf("\n\n0 - Exit\n");
 }
 
-
-
 int main()
 {
     int number;
@@ -67,109 +65,134 @@ int main()
 
                 if(number == 1)
                 {
+                    printf("Zadanie 1. Napisz funkcje, ktora zwroci pole trojkata. Dlugosci bokow trojkata przekaz jako parametry funkcji.\n");
                     f1();
                     printf("\n\n");
                 }
 
                 if(number == 2)
                 {
+                    printf("Zadanie 2. Napisz funkcje int maks(int x, int y, int z), zwracajaca wartosc maksymalna sposrod jej argumentow.\n");
                     f2();
                     printf("\n\n");
                 }
 
                 if(number == 3)
                 {
+                    printf("Zadanie 3. Napisz funkcje long int suma(int n), ktora wyznaczy sume szeregu: 1-2+3-...+-n.");
                     f3();
                     printf("\n\n");
                 }
 
                 if(number == 4)
                 {
+                    printf("Zadanie 4. Napisz funkcje long int suma(int min, int max), ktora obliczy sume liczb podzielnych przez 3 mieszczacych sie w przedziale <min, max>.");
                     f4();
                     printf("\n\n");
                 }
 
                 if(number == 5)
                 {
+                    printf("Zadanie 5. Napisz funkcje int wartoscMaks(int granica) ktora znajdzie najwieksza liczbe calkowita n taka, ze 1 + 2 + ... + n < granica.");
                     f5();
                     printf("\n\n");
                 }
 
                 if(number == 6)
                 {
+                    printf("Zadanie 6. Napisz funkcje int min(int t[], int n), ktora dla tablicy o wymiarze n danej jako parametr zwroci wartosc elementu minimalnego.\n");
                     f6();
                     printf("\n\n");
                 }
 
                 if(number == 7)
                 {
+                    printf("Zadanie 7. Napisz funkcje, ktora obliczy liczbe wystapien danego znaku w lancuchu.Lancuch oraz znak przekaz jako parametry funkcji.\n");
                     f7();
                     printf("\n\n");
                 }
 
                 if(number == 8)
                 {
+                    printf("Zadanie 8. Napisz funkcje, ktora wyswietla wzor rownania kwadratowego (np. x^2+2x-3=0) dla zadanych wartosci wspolczynnikow a, b oraz c. Uwzglednij rozne wartosci oraz znaki wspolczynnikow (aby np. nie wyswietlac 0x^2+-1x+0=0).");
                     f8();
                     printf("\n\n");
                 }
 
                 if(number == 9)
                 {
+                    printf("Zadanie 9. Napisz funkcje, ktora wyswietli na ekranie dwojkowa reprezentacje liczby calkowitej danej jako parametr.");
                     f9();
                     printf("\n\n");
                 }
 
                 if(number == 10)
                 {
+                    printf("Zadanie 10. Napisz funkcje, int ktoraCwiartka(float x, float y) ktora dla punktu o wspolrzednych (x, y) zwroci wartosc 1, 2, 3 lub 4, identyfikujaca jedna z cwiartek ukladu wspolrzednych wewnatrz ktorej lezy ten punkt. W przypadku, gdy punkt lezy na ktorejkolwiek osi wspolrzednych funkcja powinna zwrocic 0.");
                     f10();
                     printf("\n\n");
                 }
 
                 if(number == 11)
                 {
+                    printf("Zadanie 11. Napisz funkcje, float suma(float x, int n), ktora wyznaczy sume szeregu: (x+1)-(x2-2)+(x3+3)-...+-(xn+-n).");
                     f11();
                     printf("\n\n");
                 }
 
                 if(number == 12)
                 {
+                    printf("Zadanie 12. Napisz funkcje float suma(float x, int n), ktora wyznaczy sume szeregu: x+2x2+3x3+...+nxn.");
                     f12();
                     printf("\n\n");
                 }
 
                 if(number == 13)
                 {
+                    printf("Zadanie 13. Napisz funkcje float suma(float x, float epsilon), ktora dla x z przedzialu (0, 1) wyznaczy sume szeregu: 1 + x + x2/2 + ... + xi/i. Sumowanie przerwij jezeli kolejny skladnik bedzie mniejszy od zadanej dokladnosci epsilon.");
                     f13();
                     printf("\n\n");
                 }
 
                 if(number == 14)
                 {
+                    printf("Zadanie 14. Napisz funkcje sprawdzajaca, czy jej argument jest liczba pierwsza.");
                     f14();
                     printf("\n\n");
                 }
 
                 if(number == 15)
                 {
+                    printf("Zadanie 15. Napisz funkcje, ktora wypisze na ekranie zawartosc danej jako parametr jednowymiarowej tablicy liczb rzeczywistych.");
                     f15();
                     printf("\n\n");
                 }
 
                 if(number == 16)
                 {
+                    printf("Zadanie 16. Napisz funkcje, ktora zliczy i wypisze liczbe wystapien elementow tablicy o rozmiarze N.");
                     f16();
                     printf("\n\n");
                 }
 
                 if(number == 17)
                 {
+                    printf("Zadanie 17. Napisz funkcje, ktora bedzie odwracala kolejnosc znakow w przekazanym jej napisie. Po jej wykonaniu ostatni znak napisu bedzie pierwszym, przedostatni drugim, itd.");
                     f17();
                     printf("\n\n");
                 }
 
                 if(number == 18)
                 {
+                    printf("Zadanie 18. Napisz funkcje, ktora wyznaczy liczbe slow w danym jako parametr lancuchu. Slowo definiujemy jako ciag znakow oddzielony bialym znakiem lub znakiem przestankowym.");
                     f18();
+                    printf("\n\n");
+                }
+
+                if(number == 19)
+                {
+                    printf("Zadanie 19. Napisz funkcje, ktora sprawdzi, czy k-elementowy ciag znakow jest podciagiem drugiego n-elementowego ciagu. Obydwa ciagi znakow przekaz jako parametry funkcji.");
+                    f19();
                     printf("\n\n");
                 }
 
@@ -241,7 +264,7 @@ int main()
                 }
                 if(number == 10)
                 {
-                    printf("Zadanie 6.10: Napisz funkcje void pole_obwod(float R, float *p, float *o), ktora obliczy i zwroci poprzez parametry pole i obwod kola o promieniu R.");
+                    printf("Zadanie 6.10: Napisz funkcje void pole_obwod_kola(float R, float *p, float *o), ktora obliczy i zwroci poprzez parametry pole i obwod kola o promieniu R.");
                     fpp10();
                     printf("\n\n");
                 }
