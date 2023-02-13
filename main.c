@@ -3,6 +3,7 @@
 #include "lib_funkcje_pp.h"
 #include "funkcje_pp.h"
 #include "funkcje.h"
+#include "pliki_tekstowe_funkcje.h"
 
 void print_function_header()
 {
@@ -25,6 +26,7 @@ void print_header()
 {
     printf("\t\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n\n");
     printf("1. Dzial: Funkcje\n2. Dzial: Funkcje,przekazywanie parametrow.\n");
+    printf("3. Dzial: Pliki tekstowe.\n");
     printf("\n\n0 - Exit\n");
 }
 
@@ -45,6 +47,15 @@ void print_funkcje_parametry_header()
     printf("\n\n0 - Exit\n");
 }
 
+void print_pliki_tekstowe_header()
+{
+    printf("\nPliki tekstowe\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n");
+    printf("Wybierz zadanie (1-9):\n");
+    printf("1. Na podstawie pliku tekstowego liczb calkowitych stworzyc...\n2. Napisz funkcje, ktora z dwoch plikow utworzy nowy plik...\n");
+    printf("3. Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego...\n4. Dany jest plik zawierajacy liczby rzeczywiste...\n");
+    printf("5. Napisz funkcję, która z dwóch plików tekstowych utworzy...\n6. Napisz funkcje, ktora wyznaczy i zwroci...\n");
+    printf("7. Napisz funkcje, ktora wyznaczy i wypisze na ekran...\n8. Napisz funkcje, ktora przepisze zawartosc danego pliku...\n9. Napisz funkcje, ktora z dwoch plikow zawierajacych alfabetyczne...\n");
+}
 int main()
 {
     int number;
@@ -55,7 +66,7 @@ int main()
     {
         print_header();
         scanf("%d",&dzial);
-
+        //funckje
         if(dzial == 1)
         {
             do
@@ -349,6 +360,71 @@ int main()
 
             } while (number != 0);
 
+        }
+        //Pliki tekstowe
+        if(dzial == 3)
+        {
+            do
+            {
+                print_pliki_tekstowe_header();
+                scanf("%d",&number);
+
+                if(number == 1)
+                {
+                    printf("Zadanie 7.1: Na podstawie pliku tekstowego liczb calkowitych stworzyc dwa pliki: jeden z elementami parzystymi i drugi z elementami nieparzystymi. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt1();
+                    printf("\n\n");
+                }
+                if(number == 2)
+                {
+                    printf("Zadanie 7.2: Napisz funkcje, ktora z dwoch plikow utworzy nowy plik, zawierajacy najpierw znaki pierwszego pliku, a potem drugiego. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt2();
+                    printf("\n\n");
+                }
+                if(number == 3)
+                {
+                    printf("Zadanie 7.3: Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego zawierajacego slowa oddzielone spacja wszystkie wyrazy zaczynające się wielką litera. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt3();
+                    printf("\n\n");
+                }
+                if(number == 4)
+                {
+                    printf("Zadanie 7.4: Dany jest plik zawierajacy liczby rzeczywiste. Napisz funkcje, ktora rozdzieli te liczby do dwoch plikow w taki sposob, ze w jednym znajda sie liczby ujemne a w drugim dodatnie. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt4();
+                    printf("\n\n");
+                }
+                if(number == 5)
+                {
+                    printf("Zadanie 7.5: Napisz funkcje, ktora z dwoch plikow tekstowych utworzy trzeci plik, ktory zawiera wspolne slowa w tych plikach. Slowo definiujemy jako ciag znakow zakonczony bialym znakiem. Maksymalna dlugosc slowa wynosi 10 znakow. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt5();
+                    printf("\n\n");
+                }
+                if(number == 6)
+                {
+                    printf("Zadanie 7.6: Napisz funkcje, ktora wyznaczy i zwroci srednia arytmetyczna liczb calkowitych znajdujacych sie w pliku tekstowym. Sciezke dostepu do pliku przekaz jako parametry funkcji.");
+                    fpt6();
+                    printf("\n\n");
+                }
+                if(number == 7)
+                {
+                    printf("Zadanie 7.7: Napisz funkcje, ktora wyznaczy i wypisze na ekran wartosc minimalna i wartosc maksymalna sposrod liczb calkowitych znajdujących sie w pliku tekstowym. Sciezke dostepu do pliku przekaz jako parametry funkcji.");
+                    fpt7();
+                    printf("\n\n");
+                }
+                if(number == 8)
+                {
+                    printf("Zadanie 7.8: Napisz funkcje, ktora przepisze zawartosc danego pliku tekstowego do drugiego pliku zamieniajac wszystkie wystapienia slowa w1 na w2. Slowo definiujemy jako ciag znakow zakonczony bialym znakiem. Maksymalna długosc slowa wynosi 10 znakow. Sciezki dostepu do plikow oraz lancuchy przekaz jako parametry funkcji.");
+                    fpt8();
+                    printf("\n\n");
+                }
+                if(number == 9)
+                {
+                    printf("Zadanie 7.9: Napisz funkcje, ktora z dwoch plikow zawierajacych alfabetyczne listy nazwisk utworzy trzeci plik zawierajacy posortowana liste wszystkich tych nazwisk. Poszczegolne nazwiska oddzielone sa bialym znakiem (spacja, tabulatorem lub enterem). Maksymalna dlugosc nazwiska wynosi 20 znakow. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    fpt9();
+                    printf("\n\n");
+                }
+
+            }while(number != 0);
         }
 
         if(dzial == 0)

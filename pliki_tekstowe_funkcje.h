@@ -1,0 +1,9 @@
+void fpt1();
+void fpt2();
+void fpt3();
+void fpt4();
+void fpt5();
+void fpt6();
+void fpt7();
+void fpt8();
+void fpt9();

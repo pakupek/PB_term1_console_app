@@ -93,7 +93,7 @@ int minis(int t[], int n)
     printf("\n");
     printf("Element minimalny tej tablicy: %d\n",minimal);
 }
-//
+
 int wystapienia(char *l, char znak)
 {
     char wczytany_znak;
