@@ -53,7 +53,7 @@ void print_pliki_tekstowe_header()
     printf("Wybierz zadanie (1-9):\n");
     printf("1. Na podstawie pliku tekstowego liczb calkowitych stworzyc...\n2. Napisz funkcje, ktora z dwoch plikow utworzy nowy plik...\n");
     printf("3. Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego...\n4. Dany jest plik zawierajacy liczby rzeczywiste...\n");
-    printf("5. Napisz funkcję, która z dwóch plików tekstowych utworzy...\n6. Napisz funkcje, ktora wyznaczy i zwroci...\n");
+    printf("5. Napisz funkcje, ktora z dwoch plików tekstowych utworzy...\n6. Napisz funkcje, ktora wyznaczy i zwroci...\n");
     printf("7. Napisz funkcje, ktora wyznaczy i wypisze na ekran...\n8. Napisz funkcje, ktora przepisze zawartosc danego pliku...\n9. Napisz funkcje, ktora z dwoch plikow zawierajacych alfabetyczne...\n");
 }
 int main()

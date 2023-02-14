@@ -7,25 +7,24 @@ void z7_1(char *wej, char *parz, char *np)
     plik = fopen(wej,"r");
     if(plik == NULL)
     {
-        printf("Problem z odczytem pliku.");
+        printf("Problem z odczytem pliku '%s'\n",wej);
         return;
     }
-    plik_p = fopen(parz, "w");
+    plik_p = fopen(parz,"w");
     if(plik_p == NULL);
     {
-        printf("Problem z zapisem pliku liczb parzystych.");
+        printf("Problem z zapisem pliku liczb parzystych '%s'\n",parz);
         fclose(plik);
         return;
     }
     plik_np = fopen(np,"w");
     if(plik_np == NULL)
     {
-        printf("Problem z zapisem do pliku liczb nieparzystych.");
+        printf("Problem z zapisem do pliku liczb nieparzystych '%s'\n",np);
         fclose(plik);
         fclose(plik_p);
         return;
     }
-
     int x;
     while(fscanf(plik,"%d",&x) != EOF)
     {
@@ -37,7 +36,6 @@ void z7_1(char *wej, char *parz, char *np)
     fclose(plik);
     fclose(plik_p);
     fclose(plik_np);
-    return;
 }
 
 void z7_2(char *wej1, char *wej2, char *wyj)
@@ -59,15 +57,13 @@ void z7_2(char *wej1, char *wej2, char *wyj)
         fclose(plik2);
         return;
     }
-
     char linia[10];
     while(fgets(linia, 10, plik1)!=NULL)
         fprintf(plik, "%s", linia);
-        fputs(linia, plik);
+    fprintf(plik,"\n");
     while(fgets(linia, 10, plik2)!=NULL)
         fprintf(plik, "%s", linia);
-        fputs(linia, plik);
-
+    fprintf(plik,"\n");
     fclose(plik1);
     fclose(plik2);
     fclose(plik);
@@ -85,11 +81,8 @@ void z7_3(char *wej, char *wyj)
         fclose(plik);
         return;
     }
-
-
     bool czy_wyraz = false;
     char znak;
-
     while(fscanf(plik, "%c", &znak)!=EOF)
     {
         if(czy_wyraz == false && isupper(znak)!=0)
