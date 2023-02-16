@@ -130,7 +130,6 @@ void z7_4(char *wej, char *dod, char *uj)
         fclose(plik_dod);
         return;
     }
-
     float x;
     while(fscanf(plik,"%f",&x) != EOF)
     {
@@ -168,57 +167,54 @@ void z7_5(char *wej1, char *wej2, char *wyj)
         fclose(plik_wej2);
         return;
     }
-
-    char slowo1[10] = "", slowo2[10] = "";
-    char znak1, znak2;
-    int i=0,j=0,k=0,l=0;
-
-    while(fscanf(plik_wej1,"%c",&znak1) != EOF)
+    char *slowo=calloc(1,sizeof(*slowo)),*slowo2=calloc(1,sizeof(*slowo2));
+    int i=0,j=0;
+    char c,d;
+    while((c = fgetc(plik_wej1))!=EOF)
     {
-        if(isspace(znak1) == 0)
+        if(c != ' ')
         {
-            slowo1[i] = znak1;
-            i++;
-        }
-        else
-        {
-            while(fscanf(plik_wej2,"%c",&znak2) != EOF)
+            if(c == ',' || c=='.')
+                slowo[i] = '\0';
+            else
             {
-                if(isspace(znak2) == 0)
+                slowo[i] = c;
+                i++;
+                slowo = realloc(slowo,i);
+            }
+        }
+        if(c ==' ' )
+        {
+            while((d = fgetc(plik_wej2))!=EOF)
+            {
+                if(d != ' ')
                 {
-                    slowo2[j] = znak2;
-                    j++;
-                }
-                else
-                {
-                    printf("Otrzymane slowo z pierwszego pliku: ");
-                    printf("%s",slowo1);
-                    printf("\n");
-                    printf("Otrzymane slowo z drugiego pliku: ");
-                    printf("%s\n",slowo2);
-                    printf("%s == %s\n",slowo1,slowo2);
-                    if(strcmp(slowo2,slowo1) == 0)
-                    {
-                        printf("Zgodne!\n");
-                        fprintf(plik_wyj,"%s",slowo2);
-                        fprintf(plik_wyj," ");
-                        for(k=0;k<j;k++)
-                            slowo2[k] = 0;
-                        for(k=0;k<i;k++)
-                            slowo1[k] = 0;
-                        i=0;
-                        j=0;
-                        break;
-                    }
+                    if(d == ',' || d =='.')
+                        slowo2[j] = '\0';
                     else
                     {
-                        printf("Nie zgodne!\n");
-                        for(k=0;k<j;k++)
-                            slowo2[k] = 0;
-                        j=0;
+                        slowo2[j] = d;
+                        j++;
+                        slowo2 = realloc(slowo2,j);
                     }
                 }
+                if(d == ' ')
+                {
+                    if(strcmp(slowo,slowo2)==0)
+                    {
+                        fprintf(plik_wyj,"%s\n",slowo);
+                        break;
+                    }
+                    for(int k=0;k<j;k++)
+                        slowo2[k] = '\0';
+                    j=0;
+                }
             }
+            for(int k=0;k<i;k++)
+                slowo[k] = '\0';
+            i=0;
+            rewind(plik_wej2);
+            continue;
         }
     }
     fclose(plik_wej1);
