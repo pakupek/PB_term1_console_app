@@ -35,13 +35,14 @@
 	<string.h>
 	<ctype.h>
 
-1676292725 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\main.c
+1676559343 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\main.c
 	<stdio.h>
 	"lib_funkcje.h"
 	"lib_funkcje_pp.h"
 	"funkcje_pp.h"
 	"funkcje.h"
 	"pliki_tekstowe_funkcje.h"
+	<conio.h>
 
 1675692200 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje.h
 
@@ -56,7 +57,7 @@
 	<time.h>
 	<math.h>
 
-1676558910 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_pliki_tekstowe.c
+1676575164 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_pliki_tekstowe.c
 	<stdio.h>
 	<stdbool.h>
 
@@ -78,7 +79,7 @@
 
 1676286977 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.h
 
-1676456850 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.c
+1676575164 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.c
 	<stdio.h>
 	<stdlib.h>
 	<unistd.h>

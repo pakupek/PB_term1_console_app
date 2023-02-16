@@ -224,15 +224,16 @@ void z7_5(char *wej1, char *wej2, char *wyj)
 
 float z7_6(char *wej)
 {
-    int x,suma=0,licznik=0;
-    float srednia;
+    int suma=0,licznik=0;
+    float srednia,x;
     FILE *plik_wej;
     plik_wej = fopen(wej,"r");
     if(plik_wej == NULL)
     {
         printf("Problem z otwarciem pliku.");
+        return 0;
     }
-    while(fscanf(plik_wej,"%d",&x) != EOF)
+    while(fscanf(plik_wej,"%f",&x) != EOF)
     {
         suma += x;
         licznik += 1;
