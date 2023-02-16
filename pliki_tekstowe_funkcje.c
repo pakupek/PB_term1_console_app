@@ -1706,7 +1706,8 @@ void fpt6()
 
 void fpt7()
 {
-    char wybor;
+    char wybor,cwd[1024];
+    getcwd(cwd,sizeof(cwd));
     getchar();
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
@@ -1723,7 +1724,7 @@ void fpt7()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=3)
+                if(l>=244)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -1732,10 +1733,284 @@ void fpt7()
                 l++;
             }
             fclose(plik);
+
+            int check;
+            char directory_name[] = "Task 7.7",entry_file[]="integer_numbers.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                //Tworzenie random int
+                srand(time(NULL));
+                for(int i=0;i<5;i++)
+                {
+                    for(int k=0;k<5;k++)
+                    {
+                        int liczba = rand()%((INT_MAX/10)-(INT_MIN/10)+1)+(INT_MIN/10);
+                        fprintf(plik1,"%d ",liczba);
+                    }
+                    fprintf(plik1,"\n");
+                }
+
+                fclose(plik1);
+
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+
+                        printf("Wprowadz liczby calkowite do pliku.Liczby oddziel spacja(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        fprintf(wej1,"%s",linia);
+                        fclose(wej1);
+                        printf("Zapisano zmiany w pliku %s\n",entry_file);
+
+                        int max,min;
+                        z7_7(entry_file,&max,&min);
+
+                        printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        int max,min;
+                        z7_7(entry_file,&max,&min);
+                        printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+                    printf("Katalog o nazwie %s juz istnieje\n",directory_name);
+                    char entry_file[]="integer_numbers.txt",stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                    stworzyc = getchar();
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w");
+                            if(wej1 == NULL)
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+
+                            printf("Wprowadz liczby calkowite do pliku.Liczby oddziel spacja(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            fprintf(wej1,"%s",linia);
+
+                            fclose(wej1);
+                            printf("Zapisano zmiany w pliku %s\n",entry_file);
+
+                            int max,min;
+                            z7_7(entry_file,&max,&min);
+                            printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                            chdir(cwd);
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+                            int max,min;
+                            z7_7(entry_file,&max,&min);
+                            printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                            chdir(cwd);
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         if(wybor == 'N' || wybor == 'n')
         {
+
+            int check;
+            char directory_name[] = "Task 7.7",entry_file[]="integer_numbers.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                //Tworzenie random int
+                srand(time(NULL));
+                for(int i=0;i<5;i++)
+                {
+                    for(int k=0;k<5;k++)
+                    {
+                        int liczba = rand()%((INT_MAX/10)-(INT_MIN/10)+1)+(INT_MIN/10);
+                        fprintf(plik1,"%d ",liczba);
+                    }
+                    fprintf(plik1,"\n");
+                }
+
+                fclose(plik1);
+
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+
+                        printf("Wprowadz liczby calkowite do pliku.Liczby oddziel spacja(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        fprintf(wej1,"%s",linia);
+                        fclose(wej1);
+                        printf("Zapisano zmiany w pliku %s\n",entry_file);
+
+                        int max,min;
+                        z7_7(entry_file,&max,&min);
+
+                        printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        int max,min;
+                        z7_7(entry_file,&max,&min);
+                        printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+                    printf("Katalog o nazwie %s juz istnieje\n",directory_name);
+                    char entry_file[]="integer_numbers.txt",stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                    stworzyc = getchar();
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w");
+                            if(wej1 == NULL)
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+
+                            printf("Wprowadz liczby calkowite do pliku.Liczby oddziel spacja(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            fprintf(wej1,"%s",linia);
+
+                            fclose(wej1);
+                            printf("Zapisano zmiany w pliku %s\n",entry_file);
+
+                            int max,min;
+                            z7_7(entry_file,&max,&min);
+                            printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                            chdir(cwd);
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+                            int max,min;
+                            z7_7(entry_file,&max,&min);
+                            printf("Znalezione wartosci:\nMax: %d\nMin: %d\nz pliku %s\n",max,min,entry_file);
+                            chdir(cwd);
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         else

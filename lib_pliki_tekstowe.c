@@ -242,34 +242,32 @@ float z7_6(char *wej)
     return srednia;
 }
 
-int z7_7(char *wej)
+int z7_7(char *wej, int* maximum, int *minimum)
 {
     FILE *plik_wej;
     plik_wej = fopen(wej,"r");
     if(plik_wej == NULL)
     {
         printf("Problem z otwarciem pliku.");
+        return 0;
     }
-    int x,curr,min,max;
-    curr = fscanf(plik_wej,"%d",&x);
-    //printf("Wartosc curr: %d\n",curr);
+    int x,min_curr,max_curr,curr;
+    fscanf(plik_wej,"%d%d",&min_curr,&max_curr);
+    rewind(plik_wej);
     while(fscanf(plik_wej,"%d",&x) != EOF)
     {
-        if(x<=curr)
+        if(x<=min_curr)
         {
-            curr = x;
-            min = curr;
-            //printf("Min: %d\n",minimal);
+            min_curr = x;
+            *minimum = min_curr;
         }
-        else
+        if(x>=max_curr)
         {
-            //curr = x;
-            max = x;
-            //printf("Max: %d\n",max);
+            max_curr = x;
+            *maximum = max_curr;
         }
     }
-
-    printf("Wartosc minimalna: %d\nWartosc maksymalna: %d\n",min,max);
+    return 0;
 }
 
 void z7_8(char *wej, char *wyj, char *w1, char *w2)
