@@ -275,7 +275,10 @@ void z7_8(char *wej, char *wyj, char *w1, char *w2)
     FILE *plik_wej, *plik_wyj;
     plik_wej = fopen(wej,"r");
     if(plik_wej == NULL)
+    {
         printf("Problem z otwarciem pliku.");
+        return;
+    }
     plik_wyj = fopen(wyj,"w");
     if(plik_wyj == NULL)
     {
@@ -283,34 +286,60 @@ void z7_8(char *wej, char *wyj, char *w1, char *w2)
         fclose(plik_wyj);
         return;
     }
-    char slowo[10]="",znak;
-    int i=0,n=0,result;
-    while(fscanf(plik_wej,"%c",&znak) != EOF)
+    char *slowo=calloc(1,sizeof(*slowo));
+    int i=0,j=0;
+    char c,znak;
+    bool interpunkcja_przec=false,interpunkcja_krop=false;
+    while((c=fgetc(plik_wej))!=EOF)
     {
-        if(isspace(znak) == 0)
+        if(c != ' ')
         {
-            slowo[i] = znak;
-            i++;
-        }
-        else
-        {
-            if(strcmp(slowo,w1) == 0)
+            if(c!=',' || c!='.')
             {
-
-                fprintf(plik_wyj,"%s",w2);
-                fprintf(plik_wyj," ");
-                for(n=0;n<i;n++)
-                    slowo[n] = 0;
-                i=0;
+                slowo[i] = c;
+                i++;
+                slowo = realloc(slowo,i);
             }
             else
             {
-                fprintf(plik_wyj,"%s",slowo);
-                fprintf(plik_wyj," ");
-                for(n=0;n<i;n++)
-                    slowo[n] = 0;
-                i=0;
+                if(c == ',')
+                {
+                    znak = c;
+                    interpunkcja_przec = true;
+                }
+                if(c == '.')
+                {
+                    znak = c;
+                    interpunkcja_krop = true;
+                }
             }
+        }
+        if(c == ' ')
+        {
+            if(strcmp(slowo,w1)==0)
+            {
+                if(interpunkcja_krop)
+                    fprintf(plik_wyj,"%s%c\n",w2,znak);
+                if(interpunkcja_przec)
+                    fprintf(plik_wyj,"%s%c ",w2,znak);
+                if(!interpunkcja_krop && !interpunkcja_przec)
+                    fprintf(plik_wyj,"%s ",w2);
+            }
+            if(strcmp(slowo,w1)!=0)
+            {
+                if(interpunkcja_krop)
+                    fprintf(plik_wyj,"%s%c\n",slowo,znak);
+                if(interpunkcja_przec)
+                    fprintf(plik_wyj,"%s%c ",slowo,znak);
+                if(!interpunkcja_krop && !interpunkcja_przec)
+                    fprintf(plik_wyj,"%s ",slowo);
+            }
+            for(int k=0;k<i;k++)
+                slowo[k] = '\0';
+            i=0;
+            interpunkcja_przec = false;
+            interpunkcja_krop = false;
+            continue;
         }
     }
     fclose(plik_wej);

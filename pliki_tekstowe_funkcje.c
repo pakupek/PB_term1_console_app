@@ -2023,7 +2023,8 @@ void fpt7()
 
 void fpt8()
 {
-    char wybor;
+    char wybor,cwd[1024];
+    getcwd(cwd,sizeof(cwd));
     getchar();
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
@@ -2040,7 +2041,7 @@ void fpt8()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=3)
+                if(l>=272)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -2049,10 +2050,435 @@ void fpt8()
                 l++;
             }
             fclose(plik);
+
+            int check;
+            char directory_name[] = "Task 7.8",entry_file[]="your_text.txt",exit_file[]="changed_text.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w"),*exit=fopen(exit_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                if(exit == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",exit_file);
+                    fclose(plik1);
+                    return 0;
+                }
+
+                //wpisanie do pliku randomowego textu
+                char text[]="Lorem Ipsum is simply dummy text of the printing and typesetting industry.\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ";
+                fprintf(plik1,"%s",text);
+                fclose(plik1);
+
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+                        printf("Wprowadz text do pliku(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        int dl=strlen(linia),i=0;
+
+                        while(i<dl)
+                        {
+                            if(linia[i] == '.')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                fprintf(exit,"%c",linia[i]);
+                                i++;
+                                if(linia[i] == ' ')
+                                {
+                                    fprintf(wej1,"%c\n",linia[i]);
+                                    fprintf(exit,"%c\n",linia[i]);
+                                    i++;
+                                }
+                            }
+                            fprintf(wej1,"%c",linia[i]);
+                            fprintf(exit,"%c",linia[i]);
+                            i++;
+                        }
+                        fprintf(wej1," ");
+                        fclose(wej1);
+                        fclose(exit);
+
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file);
+
+                        char w1[CHAR_MAX],w2[CHAR_MAX];
+                        printf("Wprowadz slowo ktore ma byc zmienione: ");
+                        gets(w1);
+                        printf("Wprowadz slowo do wstawienia: ");
+                        gets(w2);
+
+                        z7_8(entry_file,exit_file,&w1,&w2);
+
+                        printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        char w1[CHAR_MAX],w2[CHAR_MAX];
+                        getchar();
+                        printf("Podaj slowo do zamiany: ");
+                        gets(w1);
+                        printf("Podaj slowo do wpisania: ");
+                        gets(w2);
+
+                        printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                        z7_8(entry_file,exit_file,&w1,&w2);
+
+                        printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+
+                    char stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                    stworzyc = getchar();
+
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w"),*exit=fopen(exit_file,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+                                return 0;
+                            }
+                            if(exit == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",exit_file);
+                                fclose(wej1);
+                                return 0;
+                            }
+                            printf("Wprowadz text do pliku(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            int dl=strlen(linia),i=0;
+
+                            while(i<dl)
+                            {
+                                if(linia[i] == '.')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    fprintf(exit,"%c",linia[i]);
+                                    i++;
+                                    if(linia[i] == ' ')
+                                    {
+                                        fprintf(wej1,"%c\n",linia[i]);
+                                        fprintf(exit,"%c\n",linia[i]);
+                                        i++;
+                                    }
+                                }
+                                fprintf(wej1,"%c",linia[i]);
+                                fprintf(exit,"%c",linia[i]);
+                                i++;
+                            }
+                            fprintf(wej1," ");
+                            fclose(wej1);
+                            fclose(exit);
+
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file);
+
+                            char w1[CHAR_MAX],w2[CHAR_MAX];
+                            printf("Wprowadz slowo ktore ma byc zmienione: ");
+                            gets(w1);
+                            printf("Wprowadz slowo do wstawienia: ");
+                            gets(w2);
+                            printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                            z7_8(entry_file,exit_file,&w1,&w2);
+
+                            printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+                            char w1[CHAR_MAX],w2[CHAR_MAX];
+                            getchar();
+                            printf("Podaj slowo do zamiany: ");
+                            gets(w1);
+                            printf("Podaj slowo do wpisania: ");
+                            gets(w2);
+
+                            printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                            z7_8(entry_file,exit_file,&w1,&w2);
+
+                            printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         if(wybor == 'N' || wybor == 'n')
         {
+            int check;
+            char directory_name[] = "Task 7.8",entry_file[]="your_text.txt",exit_file[]="changed_text.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w"),*exit=fopen(exit_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                if(exit == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",exit_file);
+                    fclose(plik1);
+                    return 0;
+                }
+
+                //wpisanie do pliku randomowego textu
+                char text[]="Lorem Ipsum is simply dummy text of the printing and typesetting industry.\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ";
+                fprintf(plik1,"%s",text);
+                fclose(plik1);
+
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+                        printf("Wprowadz text do pliku(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        int dl=strlen(linia),i=0;
+
+                        while(i<dl)
+                        {
+                            if(linia[i] == '.')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                fprintf(exit,"%c",linia[i]);
+                                i++;
+                                if(linia[i] == ' ')
+                                {
+                                    fprintf(wej1,"%c\n",linia[i]);
+                                    fprintf(exit,"%c\n",linia[i]);
+                                    i++;
+                                }
+                            }
+                            fprintf(wej1,"%c",linia[i]);
+                            fprintf(exit,"%c",linia[i]);
+                            i++;
+                        }
+                        fprintf(wej1," ");
+                        fclose(wej1);
+                        fclose(exit);
+
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file);
+
+                        char w1[CHAR_MAX],w2[CHAR_MAX];
+                        printf("Wprowadz slowo ktore ma byc zmienione: ");
+                        gets(w1);
+                        printf("Wprowadz slowo do wstawienia: ");
+                        gets(w2);
+
+                        z7_8(entry_file,exit_file,&w1,&w2);
+
+                        printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        char w1[CHAR_MAX],w2[CHAR_MAX];
+                        getchar();
+                        printf("Podaj slowo do zamiany: ");
+                        gets(w1);
+                        printf("Podaj slowo do wpisania: ");
+                        gets(w2);
+
+                        printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                        z7_8(entry_file,exit_file,&w1,&w2);
+
+                        printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+
+                    char stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik do zadania(Y/N): ");
+                    stworzyc = getchar();
+
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w"),*exit=fopen(exit_file,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+                                return 0;
+                            }
+                            if(exit == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",exit_file);
+                                fclose(wej1);
+                                return 0;
+                            }
+                            printf("Wprowadz text do pliku(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            int dl=strlen(linia),i=0;
+
+                            while(i<dl)
+                            {
+                                if(linia[i] == '.')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    fprintf(exit,"%c",linia[i]);
+                                    i++;
+                                    if(linia[i] == ' ')
+                                    {
+                                        fprintf(wej1,"%c\n",linia[i]);
+                                        fprintf(exit,"%c\n",linia[i]);
+                                        i++;
+                                    }
+                                }
+                                fprintf(wej1,"%c",linia[i]);
+                                fprintf(exit,"%c",linia[i]);
+                                i++;
+                            }
+                            fprintf(wej1," ");
+                            fclose(wej1);
+                            fclose(exit);
+
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file);
+
+                            char w1[CHAR_MAX],w2[CHAR_MAX];
+                            printf("Wprowadz slowo ktore ma byc zmienione: ");
+                            gets(w1);
+                            printf("Wprowadz slowo do wstawienia: ");
+                            gets(w2);
+                            printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                            z7_8(entry_file,exit_file,&w1,&w2);
+
+                            printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+                            char w1[CHAR_MAX],w2[CHAR_MAX];
+                            getchar();
+                            printf("Podaj slowo do zamiany: ");
+                            gets(w1);
+                            printf("Podaj slowo do wpisania: ");
+                            gets(w2);
+
+                            printf("\nZmieniam slowo %s na %s\n",w1,w2);
+                            z7_8(entry_file,exit_file,&w1,&w2);
+
+                            printf("Zmieniony text znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         else
