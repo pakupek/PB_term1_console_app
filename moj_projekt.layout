@@ -2,23 +2,117 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="pliki_tekstowe_funkcje.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funkcje_pp.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="87353" topLine="1738" />
+			<Cursor1 position="283" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="701" />
-			<Collapse line="1031" />
+			<Collapse line="101" />
+			<Collapse line="192" />
+			<Collapse line="279" />
+			<Collapse line="352" />
+			<Collapse line="403" />
+			<Collapse line="454" />
+			<Collapse line="522" />
+			<Collapse line="605" />
+			<Collapse line="692" />
+			<Collapse line="753" />
+			<Collapse line="832" />
+			<Collapse line="889" />
+			<Collapse line="968" />
+			<Collapse line="1019" />
+			<Collapse line="1078" />
+			<Collapse line="1155" />
+			<Collapse line="1240" />
+			<Collapse line="1321" />
+			<Collapse line="1403" />
+			<Collapse line="1507" />
+			<Collapse line="1592" />
+			<Collapse line="1671" />
 		</Folding>
 	</File>
-	<File name="lib_pliki_tekstowe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funkcje_pp.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="168" topLine="0" />
+			<Cursor1 position="96" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="pliki_tekstowe_funkcje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="126" topLine="0" />
+			<Cursor1 position="23274" topLine="80" />
+		</Cursor>
+		<Folding>
+			<Collapse line="78" />
+			<Collapse line="243" />
+		</Folding>
+	</File>
+	<File name="lib_funkcje.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2053" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="12" />
+			<Collapse line="26" />
+			<Collapse line="36" />
+			<Collapse line="49" />
+			<Collapse line="62" />
+			<Collapse line="76" />
+			<Collapse line="97" />
+			<Collapse line="111" />
+			<Collapse line="116" />
+			<Collapse line="206" />
+			<Collapse line="209" />
+			<Collapse line="226" />
+			<Collapse line="240" />
+			<Collapse line="254" />
+			<Collapse line="267" />
+			<Collapse line="286" />
+			<Collapse line="308" />
+			<Collapse line="315" />
+			<Collapse line="350" />
+			<Collapse line="363" />
+			<Collapse line="378" />
+		</Folding>
+	</File>
+	<File name="funkcje.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="132" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="lib_pliki_tekstowe.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="900" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funkcje.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2426" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="51" />
+			<Collapse line="99" />
+			<Collapse line="146" />
+			<Collapse line="193" />
+			<Collapse line="240" />
+			<Collapse line="325" />
+			<Collapse line="400" />
+			<Collapse line="448" />
+			<Collapse line="495" />
+			<Collapse line="543" />
+			<Collapse line="591" />
+			<Collapse line="640" />
+			<Collapse line="689" />
+			<Collapse line="736" />
+			<Collapse line="816" />
+			<Collapse line="891" />
+			<Collapse line="942" />
+			<Collapse line="991" />
+		</Folding>
+	</File>
+	<File name="lib_funkcje.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="558" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lib_funkcje_pp.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -53,122 +147,28 @@
 			<Collapse line="370" />
 		</Folding>
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib_pliki_tekstowe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="25504" topLine="107" />
-		</Cursor>
-		<Folding>
-			<Collapse line="78" />
-			<Collapse line="243" />
-		</Folding>
-	</File>
-	<File name="funkcje.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2426" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="51" />
-			<Collapse line="99" />
-			<Collapse line="146" />
-			<Collapse line="193" />
-			<Collapse line="240" />
-			<Collapse line="325" />
-			<Collapse line="400" />
-			<Collapse line="448" />
-			<Collapse line="495" />
-			<Collapse line="543" />
-			<Collapse line="591" />
-			<Collapse line="640" />
-			<Collapse line="689" />
-			<Collapse line="736" />
-			<Collapse line="816" />
-			<Collapse line="891" />
-			<Collapse line="942" />
-			<Collapse line="991" />
-		</Folding>
-	</File>
-	<File name="funkcje_pp.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="96" topLine="0" />
+			<Cursor1 position="168" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="funkcje_pp.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="pliki_tekstowe_funkcje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="283" topLine="0" />
+			<Cursor1 position="126" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="101" />
-			<Collapse line="192" />
-			<Collapse line="279" />
-			<Collapse line="352" />
-			<Collapse line="403" />
-			<Collapse line="454" />
-			<Collapse line="522" />
-			<Collapse line="605" />
-			<Collapse line="692" />
-			<Collapse line="753" />
-			<Collapse line="832" />
-			<Collapse line="889" />
-			<Collapse line="968" />
-			<Collapse line="1019" />
-			<Collapse line="1078" />
-			<Collapse line="1155" />
-			<Collapse line="1240" />
-			<Collapse line="1321" />
-			<Collapse line="1403" />
-			<Collapse line="1507" />
-			<Collapse line="1592" />
-			<Collapse line="1671" />
-		</Folding>
-	</File>
-	<File name="lib_funkcje.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2053" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-			<Collapse line="12" />
-			<Collapse line="26" />
-			<Collapse line="36" />
-			<Collapse line="49" />
-			<Collapse line="62" />
-			<Collapse line="76" />
-			<Collapse line="97" />
-			<Collapse line="111" />
-			<Collapse line="116" />
-			<Collapse line="206" />
-			<Collapse line="209" />
-			<Collapse line="226" />
-			<Collapse line="240" />
-			<Collapse line="254" />
-			<Collapse line="267" />
-			<Collapse line="286" />
-			<Collapse line="308" />
-			<Collapse line="315" />
-			<Collapse line="350" />
-			<Collapse line="363" />
-			<Collapse line="378" />
-		</Folding>
 	</File>
 	<File name="lib_funkcje_pp.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1104" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="lib_pliki_tekstowe.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="pliki_tekstowe_funkcje.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6406" topLine="258" />
+			<Cursor1 position="1051" topLine="19" />
 		</Cursor>
-	</File>
-	<File name="lib_funkcje.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="558" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funkcje.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="132" topLine="0" />
-		</Cursor>
+		<Folding>
+			<Collapse line="704" />
+			<Collapse line="1034" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>

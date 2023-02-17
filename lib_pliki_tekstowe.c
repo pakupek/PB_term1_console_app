@@ -3,39 +3,38 @@
 
 void z7_1(char *wej, char *parz, char *np)
 {
-    FILE *plik, *plik_p, *plik_np;
-    plik = fopen(wej,"r");
-    if(plik == NULL)
-    {
-        printf("Problem z odczytem pliku '%s'\n",wej);
+    FILE *input = fopen(wej, "r");
+    if (input == NULL) {
+        printf("Nie udalo sie otworzyc pliku %s\n", wej);
         return;
     }
-    plik_p = fopen(parz,"w");
-    if(plik_p == NULL);
-    {
-        printf("Problem z zapisem pliku liczb parzystych '%s'\n",parz);
-        fclose(plik);
+
+    FILE *even = fopen(parz, "w");
+    if (even == NULL) {
+        printf("Nie udalo sie otworzyc pliku %s\n", parz);
+        fclose(input);
         return;
     }
-    plik_np = fopen(np,"w");
-    if(plik_np == NULL)
-    {
-        printf("Problem z zapisem do pliku liczb nieparzystych '%s'\n",np);
-        fclose(plik);
-        fclose(plik_p);
+
+    FILE *odd = fopen(np, "w");
+    if (odd == NULL) {
+        printf("Nie udalo sie otworzyc pliku %s\n", np);
+        fclose(input);
+        fclose(even);
         return;
     }
-    int x;
-    while(fscanf(plik,"%d",&x) != EOF)
-    {
-        if(x%2==0)
-            fprintf(plik_p,"%d\n",x);
-        else
-            fprintf(plik_np,"%d\n",x);
+
+    int number;
+    while (fscanf(input, "%d", &number) == 1) {
+        if (number % 2 == 0) {
+            fprintf(even, "%d\n", number);
+        } else {
+            fprintf(odd, "%d\n", number);
+        }
     }
-    fclose(plik);
-    fclose(plik_p);
-    fclose(plik_np);
+    fclose(input);
+    fclose(even);
+    fclose(odd);
 }
 
 void z7_2(char *wej1, char *wej2, char *wyj)

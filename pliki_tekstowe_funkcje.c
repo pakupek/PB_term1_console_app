@@ -26,7 +26,10 @@ void fpt1()
             FILE *plik;
             plik = fopen("lib_pliki_tekstowe.c","r");
             if(plik == NULL)
+            {
                 printf("Problem z odczytem pliku!\n");
+                return 0;
+            }
             char linia[256];
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
@@ -40,160 +43,347 @@ void fpt1()
                 l++;
             }
             fclose(plik);
-            char directory_name[] = "Task 7.1";
-            int utworz,check;
+
+            char *directory_name = "Task 7.1",*base_file="base_integers.txt",*base_even="even_number.txt",*base_odd="odd_number.txt";
+            int check;
             check = mkdir(directory_name);
             if(!check)
+            {
                 printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *base=fopen(base_file,"w"),*odd,*even;
+
+                if(base == NULL)
+                {
+                    printf("Problem z zapisem do pliku %s!\n",base_file);
+                    return 0;
+                }
+
+                even = fopen(base_even,"w");
+                if(even == NULL)
+                {
+                    printf("Problem z zapisem do pliku '%s'\n",base_even);
+                    fclose(base);
+                    return 0;
+                }
+
+                odd = fopen(base_odd,"w");
+                if(odd == NULL)
+                {
+                    printf("Problem z zapisem do pliku '%s'\n",base_odd);
+                    fclose(base);
+                    fclose(even);
+                    return 0;
+                }
+
+                srand(time(NULL));
+                //wpisywanie randomowych liczb do pliku base_integers.txt
+                for(int i=0;i<10;i++)
+                {
+                    for(int j=0;j<10;j++)
+                    {
+                        int liczba = rand()%100+1;
+                        fprintf(base,"%d ",liczba);
+                    }
+                    fprintf(base,"\n");
+                }
+                fclose(base);
+                char utworz;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik z liczbami calkowitymi(Y/N): ");
+
+                while(1)
+                {
+                    utworz = getchar();
+                    printf("\n");
+                    if(utworz == 'Y' || utworz == 'y')
+                    {
+                        FILE *wej1=fopen(base_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku %s\n",base_file);
+                            return 0;
+                        }
+
+                        char linia[CHAR_MAX];
+                        getchar();
+                        printf("Wprowadz liczby do pliku.Liczby oddziel spacja: ");
+                        gets(linia);
+                        int dl = strlen(linia),i=0;
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej1,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej1);
+                        printf("Zapisano zmiany w pliku %s\n",base_file);
+                        z7_1(base_file,base_even,base_odd);
+                        printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                        chdir(cwd);
+                        break;
+                    }
+                    if(utworz == 'N' || utworz == 'n')
+                    {
+                        z7_1(base_file,base_even,base_odd);
+                        printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                        chdir(cwd);
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+
+            }
             else
             {
                 if(errno == EACCES)
                     printf("Sciezka do katalogu nie pozwala na pisanie\n");
                 if(errno == EEXIST)
+                {
+                    chdir(directory_name);
                     printf("Katalog o nazwie '%s' juz istnieje\n",directory_name);
+                    char utworz;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik z liczbami calkowitymi(Y/N): ");
+
+                    while(1)
+                    {
+                        utworz = getchar();
+                        printf("\n");
+                        if(utworz == 'Y' || utworz == 'y')
+                        {
+                            FILE *wej1=fopen(base_file,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",base_file);
+                                return 0;
+                            }
+
+                            char linia[CHAR_MAX];
+                            getchar();
+                            printf("Wprowadz liczby do pliku.Liczby oddziel spacja: ");
+                            gets(linia);
+                            int dl = strlen(linia),i=0;
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej1,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej1);
+                            printf("Zapisano zmiany w pliku %s\n",base_file);
+                            z7_1(base_file,base_even,base_odd);
+                            printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                            chdir(cwd);
+                            break;
+                        }
+                        if(utworz == 'N' || utworz == 'n')
+                        {
+                            z7_1(base_file,base_even,base_odd);
+                            printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                            chdir(cwd);
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                }
                 if(errno == ENAMETOOLONG)
                     printf("Nazwa katalogu jest za dluga\n");
-            }
-            chmod(directory_name,0777);
-            char base_file[]="base_integers.txt",base_even[]="even_number.txt",base_odd[]="odd_number.txt";
-            FILE *base,*odd,*even;
-            base = fopen(base_file,"w");
-            if(base == NULL)
-                printf("Problem z zapisem do pliku %s!\n",base_file);
-            srand(time(NULL));
-            //wpisywanie randomowych liczb do pliku base_integers.txt
-            for(int i=0;i<10;i++)
-            {
-                for(int j=0;j<10;j++)
-                {
-                    int liczba = rand()%100+1;
-                    fprintf(base,"%d ",liczba);
-                }
-                fprintf(base,"\n");
-            }
-            even = fopen(base_even,"w");
-            if(even == NULL)
-                printf("Problem z zapisem do pliku '%s'\n",base_even);
-            odd = fopen(base_odd,"w");
-            if(odd == NULL)
-            {
-                printf("Problem z zapisem do pliku '%s'\n",base_odd);
-                fclose(even);
-            }
-
-            printf("Czy chcesz utworzyc wlasny plik z liczbami calkowitymi(1-yes/0-no); ");
-            scanf("%d",&utworz);
-            while(1)
-            {
-                if(utworz== 1)
-                {
-                    remove(base_file);
-                    char nazwa[40];
-                    getchar();
-                    printf("Podaj nazwe pliku(max 40 znakow): ");
-                    gets(nazwa);
-                    FILE *file;
-                    file = fopen(nazwa,"w");
-                    if(file == NULL)
-                        printf("Problem z zapisem do pliku!\n");
-                    int wiersze,kolumny;
-                    printf("Podaj ilosc wierszy do wpisania i ilosc liczb w wierszu...\n");
-                    printf("Podaj ilosc wierszy: ");
-                    scanf("%d",&wiersze);
-                    printf("\nPodaj ilosc liczb w wierszu: ");
-                    scanf("%d",&kolumny);
-                    //warunek jesli dlugosci bede mniejse lub rowne 0 to funkcja nie ma sensu
-                    while(wiersze<1 || kolumny <1)
-                    {
-                        printf("Ilosc wierszy lub ilosc liczb w wierszu nie moze byc mniejsza lub rowna 0!\n");
-                        if(wiersze<1)
-                        {
-                            printf("Popraw ilosc wierszy: ");
-                            scanf("%d",&wiersze);
-                        }
-                        if(kolumny<1)
-                        {
-                            printf("Popraw ilosc liczb w wierszu: ");
-                            scanf("%d",&kolumny);
-                        }
-                    }
-                    //Wpisywanie liczb wprowadzonych przez uzytkownika
-                    for(int i=0;i<wiersze;i++)
-                    {
-                        for(int j=0;j<kolumny;j++)
-                        {
-                            int liczba;
-                            printf("Podaj liczbe calkowita: ");
-                            scanf("%d",&liczba);
-                            fprintf(file,"%d ",liczba);
-                        }
-                        fprintf(file,"\n");
-                    }
-                    fclose(file);
-                    z7_1(base_file,base_even,base_odd);
-                    break;
-                }
-                if(utworz == 0)
-                {
-                    char base_file1[]="base_integer.txt",base_even1[]="even_numbers.txt",base_odd1[]="odd_numbers.txt";
-                    z7_1(base_file,base_even,base_odd);
-                    fclose(even);
-                    fclose(odd);
-                    fclose(base);
-                    printf("Wynik zadania znajduje sie w plikach '%s' i '%s'\n",base_even1,base_odd1);
-
-                    chdir(directory_name); //przejscie do utworzonego katalogu
-                    FILE *base1,*odd1,*even1;
-                    base1 = fopen(base_file1,"w");
-                    if(base1 == NULL)
-                        printf("Problem z zapisem do pliku %s!\n",base_file1);
-                    srand(time(NULL));
-                    //wpisywanie randomowych liczb do pliku base_integers.txt
-                    for(int i=0;i<10;i++)
-                    {
-                        for(int j=0;j<10;j++)
-                        {
-                            int liczba = rand()%100+1;
-                            fprintf(base1,"%d ",liczba);
-                        }
-                        fprintf(base1,"\n");
-                    }
-                    fclose(base1);
-                    even1 = fopen(base_even1,"w");
-                    if(even1 == NULL)
-                        printf("Problem z zapisem do pliku '%s'\n",base_even1);
-                    odd1 = fopen(base_odd1,"w");
-                    if(odd1 == NULL)
-                    {
-                        printf("Problem z zapisem do pliku '%s'\n",base_odd1);
-                        fclose(even1);
-                    }
-                    char linia[256];
-                    while(fgets(linia,256,even)!=NULL)
-                        fprintf(even1,"%s\n");
-                    while(fgets(linia,256,odd)!=NULL)
-                        fprintf(odd1,"%s\n");
-                    fclose(even1);
-                    fclose(odd1);
-                    chdir(cwd);
-                    char curr_cwd[1024];
-                    printf("Current path: %s\n",cwd);
-                    remove(base);
-                    remove(odd);
-                    remove(even);
-
-                    break;
-                }
-                else
-                {
-                    printf("Niepoprawna wartosc!\n");
-                    getchar();
-                }
             }
             break;
         }
         if(wybor == 'N' || wybor == 'n')
         {
+            char *directory_name = "Task 7.1",*base_file="base_integers.txt",*base_even="even_number.txt",*base_odd="odd_number.txt";
+            int check;
+            check = mkdir(directory_name);
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *base=fopen(base_file,"w"),*odd,*even;
+
+                if(base == NULL)
+                {
+                    printf("Problem z zapisem do pliku %s!\n",base_file);
+                    return 0;
+                }
+
+                even = fopen(base_even,"w");
+                if(even == NULL)
+                {
+                    printf("Problem z zapisem do pliku '%s'\n",base_even);
+                    fclose(base);
+                    return 0;
+                }
+
+                odd = fopen(base_odd,"w");
+                if(odd == NULL)
+                {
+                    printf("Problem z zapisem do pliku '%s'\n",base_odd);
+                    fclose(base);
+                    fclose(even);
+                    return 0;
+                }
+
+                srand(time(NULL));
+                //wpisywanie randomowych liczb do pliku base_integers.txt
+                for(int i=0;i<10;i++)
+                {
+                    for(int j=0;j<10;j++)
+                    {
+                        int liczba = rand()%100+1;
+                        fprintf(base,"%d ",liczba);
+                    }
+                    fprintf(base,"\n");
+                }
+                fclose(base);
+                char utworz;
+                getchar();
+                printf("Czy chcesz utworzyc wlasny plik z liczbami calkowitymi(Y/N): ");
+
+                while(1)
+                {
+                    utworz = getchar();
+                    printf("\n");
+                    if(utworz == 'Y' || utworz == 'y')
+                    {
+                        FILE *wej1=fopen(base_file,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku %s\n",base_file);
+                            return 0;
+                        }
+
+                        char linia[CHAR_MAX];
+                        getchar();
+                        printf("Wprowadz liczby do pliku.Liczby oddziel spacja: ");
+                        gets(linia);
+                        int dl = strlen(linia),i=0;
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej1,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej1);
+                        printf("Zapisano zmiany w pliku %s\n",base_file);
+                        z7_1(base_file,base_even,base_odd);
+                        printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                        chdir(cwd);
+                        break;
+                    }
+                    if(utworz == 'N' || utworz == 'n')
+                    {
+                        z7_1(base_file,base_even,base_odd);
+                        printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                        chdir(cwd);
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST)
+                {
+                    chdir(directory_name);
+                    printf("Katalog o nazwie '%s' juz istnieje\n",directory_name);
+                    char utworz;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasny plik z liczbami calkowitymi(Y/N): ");
+
+                    while(1)
+                    {
+                        utworz = getchar();
+                        printf("\n");
+                        if(utworz == 'Y' || utworz == 'y')
+                        {
+                            FILE *wej1=fopen(base_file,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",base_file);
+                                return 0;
+                            }
+
+                            char linia[CHAR_MAX];
+                            getchar();
+                            printf("Wprowadz liczby do pliku.Liczby oddziel spacja: ");
+                            gets(linia);
+                            int dl = strlen(linia),i=0;
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej1,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej1);
+                            printf("Zapisano zmiany w pliku %s\n",base_file);
+                            z7_1(base_file,base_even,base_odd);
+                            printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                            chdir(cwd);
+                            break;
+                        }
+                        if(utworz == 'N' || utworz == 'n')
+                        {
+                            z7_1(base_file,base_even,base_odd);
+                            printf("Wynik zadania znajduje sie w plikach %s i %s\n",base_even,base_odd);
+                            chdir(cwd);
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                }
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+            }
             break;
         }
         else
