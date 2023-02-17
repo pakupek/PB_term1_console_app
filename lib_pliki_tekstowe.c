@@ -351,12 +351,16 @@ void z7_9(char *wej1, char *wej2, char *wyj)
     FILE *plik_wej1, *plik_wej2, *plik_wyj;
     plik_wej1 = fopen(wej1,"r");
     if(plik_wej1 == NULL)
+    {
         printf("Problem z otwarciem pliku.");
+        return 0;
+    }
     plik_wej2 = fopen(wej2,"r");
     if(plik_wej2 == NULL)
     {
         printf("Problem z otwarciem pliku.");
         fclose(plik_wej1);
+        return 0;
     }
     plik_wyj = fopen(wyj,"w");
     if(plik_wyj == NULL)
@@ -364,11 +368,10 @@ void z7_9(char *wej1, char *wej2, char *wyj)
         printf("Problem z zapisem do pliku.");
         fclose(plik_wej1);
         fclose(plik_wej2);
+        return 0;
     }
-
-    char nazwisko[20],znak1,znak2,str[20],strtmp[20];
-    int k=0,element_1=0,element_2=0,element=0,wyraz=0,j=0,i=0,result,index=0;
-
+    char nazwisko[10],znak1,znak2,str[10],strtmp[10];
+    int element_1=0,element_2=0,element=0,result,index=0;
     while(fscanf(plik_wej1,"%c",&znak1) != EOF)
     {
         if(isspace(znak1) == 0)
@@ -389,18 +392,14 @@ void z7_9(char *wej1, char *wej2, char *wyj)
         }
         else
         {
-
             element_2 += 1;
             continue;
         }
     }
-
     element = element_1 + element_2;
-    char tab[element][element];
-
+    char tab[element][50];
     rewind(plik_wej1);
     rewind(plik_wej2);
-
     while((!feof(plik_wej1))&&(index<element_1))
     {
          result=fscanf(plik_wej1,"%s",nazwisko);
@@ -415,7 +414,6 @@ void z7_9(char *wej1, char *wej2, char *wyj)
             index++;
          }
     }
-
     while((!feof(plik_wej2))&&(index<element))
     {
          result=fscanf(plik_wej2,"%s",nazwisko);
@@ -429,18 +427,11 @@ void z7_9(char *wej1, char *wej2, char *wyj)
             strcpy(tab[index],nazwisko);
             index++;
          }
-
     }
-    for(i=0;i<index;i++)
-    {
-        printf("%i.\"%s\"\n",i+1,tab[i]);
-    }
-
     //Sortowanie
-
-    for(i=0;i<index;i++)
+    for(int i=0;i<index;i++)
     {
-        for(j=0;j<index-i-1;j++)
+        for(int j=0;j<index-i-1;j++)
         {
             if(strcmp(tab[j],tab[j+1])>0)
             {
@@ -452,11 +443,8 @@ void z7_9(char *wej1, char *wej2, char *wyj)
         }
     }
     //wpisanie do pliku
-    for(i=0;i<index;i++)
-    {
+    for(int i=0;i<index;i++)
         fprintf(plik_wyj,"%s\n",tab[i]);
-    }
-
     fclose(plik_wej1);
     fclose(plik_wej2);
     fclose(plik_wyj);

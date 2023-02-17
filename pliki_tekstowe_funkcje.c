@@ -2491,7 +2491,9 @@ void fpt8()
 
 void fpt9()
 {
-    char wybor;
+    void z7_9(char *wej1, char *wej2, char *wyj);
+    char wybor,cwd[1024];
+    getcwd(cwd,sizeof(cwd));
     getchar();
     printf("\nCzy wyswietlic kod funkcji?(Y/N): ");
     while(1)
@@ -2508,7 +2510,7 @@ void fpt9()
             int l=0;
             while(fgets(linia,256,plik)!=NULL)
             {
-                if(l>=3)
+                if(l>=348)
                 {
                     if(strlen(linia)<=1)
                         break;
@@ -2517,10 +2519,503 @@ void fpt9()
                 l++;
             }
             fclose(plik);
+
+            int check;
+            char directory_name[] = "Task 7.9",entry_file[]="last_names1.txt",entry_file2[]="last_names2.txt",exit_file[]="alphabetic_last_names.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w"),*plik2=fopen(entry_file2,"w"),*exit=fopen(exit_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                if(plik2 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file2);
+                    fclose(plik1);
+                    return 0;
+                }
+                if(exit == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",exit_file);
+                    fclose(plik1);
+                    fclose(plik2);
+                    return 0;
+                }
+                fclose(exit);
+                //wpisanie do pliku randomowego textu
+                char text[]="Elsher Solace Levine Thatcher Raven Bardot Hansley St.James Cromwell Collymore Stoll Verlice Adler Huxley Ledger Hayes Ford Finnegan";
+                char text2[] = "Ashley Monroe West Langley Daughtler Madison Marley Ellis Hope Cassidy Beckett Gatlin Pierce Zimmerman Dawson Wilson Adair Gray Curran Crassus";
+                int dl = strlen(text),i=0,dl2=strlen(text2);
+
+                while(i<dl)
+                {
+                    if(text[i] != ' ')
+                    {
+                        fprintf(plik1,"%c",text[i]);
+                        i++;
+                    }
+                    else
+                    {
+                        fprintf(plik1,"\n");
+                        i++;
+                    }
+
+                }
+                fclose(plik1);
+                i=0;
+                while(i<dl2)
+                {
+                    if(text2[i] != ' ')
+                    {
+                        fprintf(plik2,"%c",text2[i]);
+                        i++;
+                    }
+                    else
+                    {
+                        fprintf(plik2,"\n");
+                        i++;
+                    }
+                }
+                fclose(plik2);
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasne pliki do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w"),*wej2=fopen(entry_file2,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+                        if(wej2 == NULL)
+                        {
+                            printf("Blad zapisu do pliku %s\n",entry_file2);
+                            fclose(wej1);
+                            return 0;
+                        }
+                        printf("Wprowadz nazwiska do pierwszego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        int dl=strlen(linia),i=0;
+
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej1,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej1);
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file);
+                        printf("Wprowadz nazwiska do drugiego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                        gets(linia);
+                        dl=strlen(linia);
+                        i=0;
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej2,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej2,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej2);
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file2);
+                        z7_9(entry_file,entry_file2,exit_file);
+
+                        printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego*/
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        z7_9(entry_file,entry_file2,exit_file);
+                        printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+
+                    char stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasne pliki do zadania(Y/N): ");
+                    stworzyc = getchar();
+
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w"),*wej2=fopen(entry_file2,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+                                return 0;
+                            }
+                            if(wej2 == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",entry_file2);
+                                fclose(wej1);
+                                return 0;
+                            }
+                            printf("Wprowadz nazwiska do pierwszego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            int dl=strlen(linia),i=0;
+
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej1,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej1);
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file);
+                            printf("Wprowadz nazwiska do drugiego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                            gets(linia);
+                            dl=strlen(linia);
+                            i=0;
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej2,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej2,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej2);
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file2);
+
+                            z7_9(entry_file,entry_file2,exit_file);
+
+                            printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego*/
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+
+                            z7_9(entry_file,entry_file2,exit_file);
+                            printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         if(wybor == 'N' || wybor == 'n')
         {
+            int check;
+            char directory_name[] = "Task 7.9",entry_file[]="last_names1.txt",entry_file2[]="last_names2.txt",exit_file[]="alphabetic_last_names.txt";
+            check = mkdir(directory_name);
+
+            if(!check)
+            {
+                printf("Utworzono katalog '%s'\n",directory_name);
+                chdir(directory_name);
+                FILE *plik1=fopen(entry_file,"w"),*plik2=fopen(entry_file2,"w"),*exit=fopen(exit_file,"w");    //tworzenie plikow w katalogu
+                if(plik1 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file);
+                    return 0;
+                }
+                if(plik2 == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",entry_file2);
+                    fclose(plik1);
+                    return 0;
+                }
+                if(exit == NULL)
+                {
+                    printf("Blad zapisu do pliku %s\n",exit_file);
+                    fclose(plik1);
+                    fclose(plik2);
+                    return 0;
+                }
+                fclose(exit);
+                //wpisanie do pliku randomowego textu
+                char text[]="Elsher Solace Levine Thatcher Raven Bardot Hansley St.James Cromwell Collymore Stoll Verlice Adler Huxley Ledger Hayes Ford Finnegan";
+                char text2[] = "Ashley Monroe West Langley Daughtler Madison Marley Ellis Hope Cassidy Beckett Gatlin Pierce Zimmerman Dawson Wilson Adair Gray Curran Crassus";
+                int dl = strlen(text),i=0,dl2=strlen(text2);
+
+                while(i<dl)
+                {
+                    if(text[i] != ' ')
+                    {
+                        fprintf(plik1,"%c",text[i]);
+                        i++;
+                    }
+                    else
+                    {
+                        fprintf(plik1,"\n");
+                        i++;
+                    }
+
+                }
+                fclose(plik1);
+                i=0;
+                while(i<dl2)
+                {
+                    if(text2[i] != ' ')
+                    {
+                        fprintf(plik2,"%c",text2[i]);
+                        i++;
+                    }
+                    else
+                    {
+                        fprintf(plik2,"\n");
+                        i++;
+                    }
+                }
+                fclose(plik2);
+                char stworzyc;
+                getchar();
+                printf("Czy chcesz utworzyc wlasne pliki do zadania(Y/N): ");
+                stworzyc = getchar();
+
+                while(1)
+                {
+                    printf("\n");
+                    if(stworzyc == 'Y' || stworzyc == 'y')
+                    {
+                        FILE *wej1=fopen(entry_file,"w"),*wej2=fopen(entry_file2,"w");
+                        if(wej1 == NULL)
+                        {
+                            printf("Blad zapisu do pliku '%s'\n",entry_file);
+                            return 0;
+                        }
+                        if(wej2 == NULL)
+                        {
+                            printf("Blad zapisu do pliku %s\n",entry_file2);
+                            fclose(wej1);
+                            return 0;
+                        }
+                        printf("Wprowadz nazwiska do pierwszego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                        getchar();
+
+                        char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                        gets(linia);
+                        int dl=strlen(linia),i=0;
+
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej1,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej1,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej1);
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file);
+                        printf("Wprowadz nazwiska do drugiego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                        gets(linia);
+                        dl=strlen(linia);
+                        i=0;
+                        while(i<dl)
+                        {
+                            if(linia[i] != ' ')
+                            {
+                                fprintf(wej2,"%c",linia[i]);
+                                i++;
+                            }
+                            else
+                            {
+                                fprintf(wej2,"\n");
+                                i++;
+                            }
+                        }
+                        fclose(wej2);
+                        printf("\nZapisano zmiany w pliku %s\n",entry_file2);
+
+                        z7_9(entry_file,entry_file2,exit_file);
+
+                        printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego*/
+                        break;
+                    }
+                    if(stworzyc == 'N' || stworzyc == 'n')
+                    {
+                        z7_9(entry_file,entry_file2,exit_file);
+                        printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                        chdir(cwd); //cofniecie sie do katalogu glownego
+                        break;
+                    }
+                    else
+                    {
+                        printf("Nieprawidlowa wartosc!\n");
+                        getchar();
+                    }
+                }
+                break;
+            }
+            else
+            {
+                if(errno == EACCES)
+                    printf("Sciezka do katalogu nie pozwala na pisanie\n");
+                if(errno == EEXIST) //katalog juz istnieje
+                {
+                    chdir(directory_name);
+                    char stworzyc;
+                    getchar();
+                    printf("Czy chcesz utworzyc wlasne pliki do zadania(Y/N): ");
+                    stworzyc = getchar();
+
+                    while(1)
+                    {
+                        printf("\n");
+                        if(stworzyc == 'Y' || stworzyc == 'y')
+                        {
+                            FILE *wej1=fopen(entry_file,"w"),*wej2=fopen(entry_file2,"w");
+                            if(wej1 == NULL)
+                            {
+                                printf("Blad zapisu do pliku '%s'\n",entry_file);
+                                return 0;
+                            }
+                            if(wej2 == NULL)
+                            {
+                                printf("Blad zapisu do pliku %s\n",entry_file2);
+                                fclose(wej1);
+                                return 0;
+                            }
+                            printf("Wprowadz nazwiska do pierwszego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                            getchar();
+
+                            char linia[CHAR_MAX];   //wprowadzanie tekstu przez uzytkownika
+                            gets(linia);
+                            int dl=strlen(linia),i=0;
+
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej1,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej1,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej1);
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file);
+                            printf("Wprowadz nazwiska do drugiego pliku.Nazwiska oddzielone spacja(Enter-koniec): ");
+                            gets(linia);
+                            dl=strlen(linia);
+                            i=0;
+                            while(i<dl)
+                            {
+                                if(linia[i] != ' ')
+                                {
+                                    fprintf(wej2,"%c",linia[i]);
+                                    i++;
+                                }
+                                else
+                                {
+                                    fprintf(wej2,"\n");
+                                    i++;
+                                }
+                            }
+                            fclose(wej2);
+                            printf("\nZapisano zmiany w pliku %s\n",entry_file2);
+
+                            z7_9(entry_file,entry_file2,exit_file);
+
+                            printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego*/
+                            break;
+                        }
+                        if(stworzyc == 'N' || stworzyc == 'n')
+                        {
+                            z7_9(entry_file,entry_file2,exit_file);
+                            printf("Posortowane nazwiska znajduje sie w pliku %s\n",exit_file);
+                            chdir(cwd); //cofniecie sie do katalogu glownego
+                            break;
+                        }
+                        else
+                        {
+                            printf("Nieprawidlowa wartosc!\n");
+                            getchar();
+                        }
+                    }
+                    break;
+                }
+                //warunek jesli nazwa katalogu jest za dluga
+                if(errno == ENAMETOOLONG)
+                    printf("Nazwa katalogu jest za dluga\n");
+                break;
+            }
             break;
         }
         else
