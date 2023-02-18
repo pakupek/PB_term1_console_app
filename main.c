@@ -61,7 +61,7 @@ void print_pliki_tekstowe_header()
     printf("Wybierz zadanie (1-9):\n");
     printf("1. Na podstawie pliku tekstowego liczb calkowitych stworzyc...\n2. Napisz funkcje, ktora z dwoch plikow utworzy nowy plik...\n");
     printf("3. Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego...\n4. Dany jest plik zawierajacy liczby rzeczywiste...\n");
-    printf("5. Napisz funkcje, ktora z dwoch plików tekstowych utworzy...\n6. Napisz funkcje, ktora wyznaczy i zwroci...\n");
+    printf("5. Napisz funkcje, ktora z dwoch plikow tekstowych utworzy...\n6. Napisz funkcje, ktora wyznaczy i zwroci...\n");
     printf("7. Napisz funkcje, ktora wyznaczy i wypisze na ekran...\n8. Napisz funkcje, ktora przepisze zawartosc danego pliku...\n9. Napisz funkcje, ktora z dwoch plikow zawierajacych alfabetyczne...\n");
     printf("\n\n0 - Exit\n");
 }
@@ -437,7 +437,7 @@ int main()
                 if(number == 3)
                 {
                     clrscr();
-                    printf("Zadanie 7.3: Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego zawierajacego slowa oddzielone spacja wszystkie wyrazy zaczynające się wielką litera. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
+                    printf("Zadanie 7.3: Napisz funkcje, ktora zapisze do pliku wynikowego z pliku tekstowego zawierajacego slowa oddzielone spacja wszystkie wyrazy zaczynające sie wielka litera. Sciezki dostepu do plikow przekaz jako parametry funkcji.");
                     fpt3();
                     printf("\n\n");
                 }
