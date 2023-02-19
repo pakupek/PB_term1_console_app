@@ -5,6 +5,7 @@
 #include "funkcje.h"
 #include "pliki_tekstowe_funkcje.h"
 #include <conio.h>
+#include "dynamic_allocate.h"
 
 //Czyszczenie ekranu konsoli
 void clrscr()
@@ -34,7 +35,7 @@ void print_header()
 {
     printf("\t\t\t\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n\n");
     printf("1. Dzial: Funkcje\n2. Dzial: Funkcje,przekazywanie parametrow.\n");
-    printf("3. Dzial: Pliki tekstowe.\n");
+    printf("3. Dzial: Pliki tekstowe.\n4. Dzial: Dynamiczny przydzial pamieci\n");
     printf("\n\n0 - Exit\n");
 }
 
@@ -65,6 +66,18 @@ void print_pliki_tekstowe_header()
     printf("7. Napisz funkcje, ktora wyznaczy i wypisze na ekran...\n8. Napisz funkcje, ktora przepisze zawartosc danego pliku...\n9. Napisz funkcje, ktora z dwoch plikow zawierajacych alfabetyczne...\n");
     printf("\n\n0 - Exit\n");
 }
+
+void print_dynamiczy_przydzial_header()
+{
+    printf("\nDynamiczny przydzial pamieci\t\t\t\t\\     Semestr I       /\n\t\t\t\t\t\t\t \\ Programowanie w C /\n");
+    printf("Wybierz zadanie (1-11):\n");
+    printf("1. Napisz funkcje, ktora tworzy oraz...\n2. Napisz funkcje, ktora liczy sume dwoch wektorow...\n3. Napisz funkcje, ktora skleja dwa...\n");
+    printf("4. Napisz funkcje, ktora zmienia rozmiar tablicy...\n5. Napisz funkcje, ktora splaszcza macierz...\n6. Napisz funkcje, ktora z wektora tworzy...\n");
+    printf("7. Napisz funkcje, ktora z tablicy podanej jako...\n8. Napisz funkcje, ktora z tablicy podanej jako...\n9. Napisz funkcje, ktora doda wartosc pod...\n");
+    printf("10. Napisz funkcje, ktora usunie element...\n11. Napisz funkcje, ktora na podstawie tablicy...\n");
+    printf("\n\n0 - Exit\n");
+}
+
 int main()
 {
     int number;
@@ -484,6 +497,91 @@ int main()
                     printf("\n\n");
                 }
 
+            }while(number != 0);
+        }
+        //Dynamiczny przydzial pamieci
+        if(dzial == 4)
+        {
+            do
+            {
+                print_dynamiczy_przydzial_header();
+                scanf("%d",&number);
+                if(number == 1)
+                {
+                    clrscr();
+                    printf("Zadanie 8.1: Napisz funkcje, ktora tworzy oraz zwraca tablice o dlugosci n i wypelnia ja losowymi wartosciami.");
+                    Da1();
+                    printf("\n\n");
+                }
+                if(number == 2)
+                {
+                    clrscr();
+                    printf("Zadanie 8.2: Napisz funkcje, ktora liczy sume dwoch wektorow o dlugosci n (wynikiem jest rowniez wektor o dlugosci n).\nprzyklad: v1 = {2, 4, 3, 1}, v2 = {1, 1, 1, 10}\nwynik: {3, 5, 4, 11}");
+                    Da2();
+                }
+                if(number == 3)
+                {
+                    clrscr();
+                    printf("Zadanie 8.3: Napisz funkcje, ktora skleja dwa lancuchy znakow (napisy) w jeden i zwraca go jako wynik.\nprzykład: s1 = Ala, s2 = makota\nwynik: Alamakota");
+                    Da3();
+                    printf("\n\n");
+                }
+                if(number == 4)
+                {
+                    clrscr();
+                    printf("Zadanie 8.4: Napisz funkcje, ktora zmienia rozmiar tablicy z n-elementowej na m-elementowa (nowy wymiar moze byc mniejszy lub wiekszy od poczatkowego). W przypadku zwiekszania rozmiaru tablicy dodatkowe elementy wypelnij zerami. Zadanie rozwiaz na dwa sposoby: tworzac nowa tablice i przepisujac do niej zawartosc starej oraz korzystajac z funkcji realloc.");
+                    Da4();
+                    printf("\n\n");
+                }
+                if(number == 5)
+                {
+                    clrscr();
+                    printf("Zadanie 8.5: Napisz funkcje, ktora splaszcza macierz - przyjmuje macierz jako parametr, a zwraca wektor utworzony z jej kolejnych elementow czytanych wierszami.\nprzyklad: macierz = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}\nwyniki: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}");
+                    Da5();
+                    printf("\n\n");
+                }
+                if(number == 6)
+                {
+                    clrscr();
+                    printf("Zadanie 8.6: Napisz funkcje, ktora z wektora tworzy macierz o podanym rozmiarze - jej wiersze tworzone sa z kolejnych elementow wektora.\nprzyklad: wektor = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, wiersze = 4, kolumny = 3\nwynik: {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}");
+                    Da6();
+                    printf("\n\n");
+                }
+                if(number == 7)
+                {
+                    clrscr();
+                    printf("Zadanie 8.7: Napisz funkcje, ktora z tablicy podanej jako parametr skopiuje elementy ze wskazanego zakresu indeksow do tablicy zwracanej jako wynik.\nprzyklad: tablica = {2, 4, 7, 1, 5, 8, 3, 6, 9}, idx0 = 2, idx1 = 5\nwynik: {7, 1, 5, 8}.");
+                    Da7();
+                    printf("\n\n");
+                }
+                if(number == 8)
+                {
+                    clrscr();
+                    printf("Zadanie 8.8: Napisz funkcje, ktora z tablicy podanej jako parametr wybierze wartosci nalezace do wskazanego zakresu i skopiuje je do tablicy zwracanej jako wynik (pamietaj by zwrocic rowniez rozmiar utworzonej tablicy).\nprzyklad: tablica = {2, 4, 7, 1, 5, 8, 3, 6, 9}, a = 2, b = 5\nwynik: {2, 4, 5, 3} (4 elementy).");
+                    Da8();
+                    printf("\n\n");
+                }
+                if(number == 9)
+                {
+                    clrscr();
+                    printf("Zadanie 8.9: Napisz funkcje, ktora doda wartosc pod wskazanym indeksem tablicy (tablice przekaz przez wskaznik).\nprzyklad: tablica = {2, 3, 4, 5, 6}, idx = 2, wartosc = 7;\npo wywolaniu: tablica = {2, 3, 7, 4, 5, 6}");
+                    Da9();
+                    printf("\n\n");
+                }
+                if(number == 10)
+                {
+                    clrscr();
+                    printf("Zadanie 8.10: Napisz funkcje, ktora usunie element spod wskazanego indeksu tablicy (tablice przekaz przez wskaznik).\nprzyklad: tablica = {2, 3, 4, 5, 6}, idx = 2;\npo wywolaniu: tablica = {2, 3, 5, 6}");
+                    Da10();
+                    printf("\n\n");
+                }
+                if(number == 11)
+                {
+                    clrscr();
+                    printf("Zadanie 8.11: Napisz funkcje, ktora na podstawie tablicy liczb calkowitych stworzy nowa w taki sposob, by nie zawierala powtarzajacych się wartosci. Parametrem funkcji jest oryginalna tablica oraz jej rozmiar. Pamietaj rowniez o rozmiarze nowej tablicy – on rowniez musi wyjść poza funkcje.");
+                    Da11();
+                    printf("\n\n");
+                }
             }while(number != 0);
         }
 

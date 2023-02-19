@@ -10,7 +10,7 @@
 #include <limits.h>
 
 extern int errno;
-//Blad zapisu do pliku even_numbers.txt
+
 void fpt1()
 {
     char wybor,cwd[1024];
@@ -143,7 +143,6 @@ void fpt1()
                         getchar();
                     }
                 }
-
             }
             else
             {

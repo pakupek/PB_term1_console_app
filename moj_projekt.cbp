@@ -32,6 +32,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dynamic_allocate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dynamic_allocate.h" />
 		<Unit filename="funkcje.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -41,6 +45,10 @@
 		</Unit>
 		<Unit filename="funkcje_pp.h" />
 		<Unit filename="instrukcje_wejscia.h" />
+		<Unit filename="lib_dynamic_allocate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib_dynamic_allocate.h" />
 		<Unit filename="lib_funkcje.c">
 			<Option compilerVar="CC" />
 		</Unit>

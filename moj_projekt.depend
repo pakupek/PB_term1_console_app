@@ -35,7 +35,7 @@
 	<string.h>
 	<ctype.h>
 
-1676559343 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\main.c
+1676802960 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\main.c
 	<stdio.h>
 	"lib_funkcje.h"
 	"lib_funkcje_pp.h"
@@ -43,6 +43,7 @@
 	"funkcje.h"
 	"pliki_tekstowe_funkcje.h"
 	<conio.h>
+	"dynamic_allocate.h"
 
 1675692200 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_funkcje.h
 
@@ -79,7 +80,7 @@
 
 1676286977 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.h
 
-1676672473 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.c
+1676739575 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\pliki_tekstowe_funkcje.c
 	<stdio.h>
 	<stdlib.h>
 	<unistd.h>
@@ -90,4 +91,14 @@
 	<sys/types.h>
 	<string.h>
 	<limits.h>
+
+1676754589 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\dynamic_allocate.c
+	<stdio.h>
+	<stdlib.h>
+
+1676754645 source:c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\lib_dynamic_allocate.c
+	<stdio.h>
+	<stdlib.h>
+
+1676754234 c:\users\adama\desktop\studia\zadania c\aplikacja_konsolowa\dynamic_allocate.h
 
